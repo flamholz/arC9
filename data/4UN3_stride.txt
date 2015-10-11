@@ -1,0 +1,1686 @@
+REM  --------------------------------------------------------------------  4UN3
+REM                                                                        4UN3
+REM  STRIDE: Knowledge-based secondary structure assignment                4UN3
+REM  Please cite: D.Frishman & P.Argos, Proteins XX, XXX-XXX, 1995         4UN3
+REM                                                                        4UN3
+REM  Residue accessible surface area calculation                           4UN3
+REM  Please cite: F.Eisenhaber & P.Argos, J.Comp.Chem. 14, 1272-1280, 1993 4UN3
+REM               F.Eisenhaber et al., J.Comp.Chem., 1994, submitted       4UN3
+REM                                                                        4UN3
+REM  ------------------------ General information -----------------------  4UN3
+REM                                                                        4UN3
+HDR  HYDROLASE/DNA/RNA                       25-MAY-14   4UN3              4UN3
+CMP  MOL_ID: 1;                                                            4UN3
+CMP   MOLECULE: CRISPR-ASSOCIATED ENDONUCLEASE CAS9/CSN1;                  4UN3
+CMP   CHAIN: B;                                                            4UN3
+CMP   SYNONYM: CAS9;                                                       4UN3
+CMP   EC: 3.1.-.-;                                                         4UN3
+CMP   ENGINEERED: YES;                                                     4UN3
+CMP   MUTATION: YES;                                                       4UN3
+CMP   MOL_ID: 2;                                                           4UN3
+CMP   MOLECULE: SGRNA;                                                     4UN3
+CMP   CHAIN: A;                                                            4UN3
+CMP   MOL_ID: 3;                                                           4UN3
+CMP   MOLECULE: TARGET DNA STRAND;                                         4UN3
+CMP   CHAIN: C;                                                            4UN3
+CMP   MOL_ID: 4;                                                           4UN3
+CMP   MOLECULE: NON-TARGET DNA STRAND;                                     4UN3
+CMP   CHAIN: D                                                             4UN3
+SRC  MOL_ID: 1;                                                            4UN3
+SRC   ORGANISM_SCIENTIFIC: STREPTOCOCCUS PYOGENES;                         4UN3
+SRC   ORGANISM_TAXID: 1314;                                                4UN3
+SRC   STRAIN: M1;                                                          4UN3
+SRC   EXPRESSION_SYSTEM: ESCHERICHIA COLI;                                 4UN3
+SRC   EXPRESSION_SYSTEM_TAXID: 469008;                                     4UN3
+SRC   EXPRESSION_SYSTEM_STRAIN: BL21(DE3);                                 4UN3
+SRC   EXPRESSION_SYSTEM_VARIANT: ROSETTA 2;                                4UN3
+SRC   EXPRESSION_SYSTEM_VECTOR_TYPE: PLASMID;                              4UN3
+SRC   EXPRESSION_SYSTEM_PLASMID: PEC-K-MBP;                                4UN3
+SRC   MOL_ID: 2;                                                           4UN3
+SRC   SYNTHETIC: YES;                                                      4UN3
+SRC   ORGANISM_SCIENTIFIC: SYNTHETIC CONSTRUCT;                            4UN3
+SRC   ORGANISM_TAXID: 32630;                                               4UN3
+SRC   MOL_ID: 3;                                                           4UN3
+SRC   SYNTHETIC: YES;                                                      4UN3
+SRC   ORGANISM_SCIENTIFIC: SYNTHETIC CONSTRUCT;                            4UN3
+SRC   ORGANISM_TAXID: 32630;                                               4UN3
+SRC   MOL_ID: 4;                                                           4UN3
+SRC   SYNTHETIC: YES;                                                      4UN3
+SRC   ORGANISM_SCIENTIFIC: SYNTHETIC CONSTRUCT;                            4UN3
+SRC   ORGANISM_TAXID: 32630                                                4UN3
+AUT  C.ANDERS,O.NIEWOEHNER,A.DUERST,M.JINEK                                4UN3
+REM                                                                        4UN3
+REM  -------------------- Secondary structure summary -------------------  4UN3
+REM                                                                        4UN3
+CHN  /home/proj/stride/tmp/tmpn_qTuipdb B                                  4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  1    KYSIGLDIGTNSVGWAVITDEYKVPSKKFKVLGNTDRHSIKKNLIGALLF   50          4UN3
+STR         EEEEEETTTEEEEEEETTTT   EEEEEEEE     EEEEE EEEEE                4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  51   DSGETAEATRLKRTARRRYTRRKNRICYLQEIFSNEMAKVDDSFFHRLEE  100          4UN3
+STR            HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH  HHHHHHHH               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  101  SFLVEEDKKHERHPIFGNIVDEVAYHEKYPTIYHLRKKLVDSTDKADLRL  150          4UN3
+STR       TTT GGGTTTT TTTTT HHHHHHHHHHTTTHHHHHHHHHH      HHH               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  151  IYLALAHMIKFRGHFLIEGDLNPDNSDVDKLFIQLVQTYNQLFEENPINA  200          4UN3
+STR       HHHHHHHHHH   B            HHHHHHHHHHHHHHHHTTTTT  T               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  201  SGVDAKAILSARLSKSRRLENLIAQLPGEKKNGLFGNLIALSLGLTPNFK  250          4UN3
+STR       TTTTHHHHHH    HHHHHHHHHHHTTTTTTTTHHHHHHHHHH    B G               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  251  SNFDLAEDAKLQLSKDTYDDDLDNLLAQIGDQYADLFLAAKNLSDAILLS  300          4UN3
+STR       GG       B TTTT HHHHHHHHHHHHH GGGHHHHHHHHHHHHH  HH               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  301  DILRVNTEITKAPLSASMIKRYDEHHQDLTLLKALVRQQLPEKYKEIFFD  350          4UN3
+STR       HHH  TTTTTTTHHHHHHHHHHHHHHHHHHHHHHHHHHH GGGHHHHHHT               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  351  QSKNGYAGYIDGGASQEEFYKFIKPILEKMDTEELLVKLNREDLLRKQRT  400          4UN3
+STR       TTTT HHHHHH    HHHHHHHHHHHHHH  HHHHHHHHHH TTTTTTTT               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  401  FDNGSIPHQIHLGELHAILRRQEDFYPFLKDNREKIEKILTFRIPYYVGP  450          4UN3
+STR       TTTTTTBHHHHHHHHHHHHHHHHTTTHHHHHHHHHHHHHHH   TTTTT                4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  451  LARGNSRFAWMTRKSEETITPWNFEEVVDKGASAQSFIERMTNFDKNLPN  500          4UN3
+STR        TTTTTTTT   BTTT   TTTHHHHHB HHHHHHHHHHH   BTTTTTT               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  501  EKVLPKHSLLYEYFTVYNELTKVKYVTEGMRKPAFLSGEQKKAIVDLLFK  550          4UN3
+STR       TBEEETTTHHHHHHHHHHHHH  EEETTTT   EE  HHHHHHHHHHHTT               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  551  TNRKVTVKQLKEDYFKKIECFDSVEISGVEDRFNASLGTYHDLLKIIKDK  600          4UN3
+STR       TTTTEEHHHHHHHHHHHHH TTTTEETTTTTEE    HHHHHHHHHH  H               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  601  DFLDNEENEDILEDIVLTLTLFEDREMIEERLKTYAHLFDDKVMKQLKRR  650          4UN3
+STR       HHHH GGGHHHHHHHHHHHHH   HHHHHHHHGGGTTTT HHHHHHHHH                4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  651  RYTGWGRLSRKLINGIRDKQSGKTILDFLKSDGFANRNFMQLIHDDSLTF  700          4UN3
+STR           EEEEEHHHHHH EETTTTEEHHHHHH TTTTT  HHHHH TTTTHH               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  701  KEDIQKSLHEHIANLAGSPAIKKGILQTVKVVDELVKVMGRHKPENIVIE  750          4UN3
+STR       HHHHH  HHHHHHH    HHHHHHHHHHHHHHHHHHHHHTTT TTEEEEE               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  751  MARNSRERMKRIEEGIKELGSQILKEHPVENTQLQNEKLYLYYLQNGRDM  800          4UN3
+STR       E  HHHHHHHHHHHHHHHH  HHHHH    GGGTTTHHHHHHHHHTTEET               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  801  YVDQELDINRLSDYDVDAIVPQSFLKDDSIDNKVLTRSDKNRGKSDNVPS  850          4UN3
+STR       TTTEE TTTTGGG EEEETTTTTTTT   GGGEEEETTGGGG TTTT                  4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  851  EEVVKKMKNYWRQLLNAKLITQRKFDNLTKAERGGLSELDKAGFIKRQLV  900          4UN3
+STR       HHHHHHHHHHHHHHHHHTTTTHHHHHHHHGGGG    HHHHHHHHHHHHB               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  901  ETRQITKHVAQILDSRMNTKYDENDKLIREVKVITLKSKLVSDFRKDFQF  950          4UN3
+STR          HHHHHHHHHHHHHH  EEETTTEEETTTEEEEE HHHHHHHHHHH                 4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  951  YKVREINNYHHAHDAYLNAVVGTALIKKYPKLESEFVYGDGKATAKYFFY 1000          4UN3
+STR         TTTTTHHHHHHHHHHHHHHHHHHHHH GGGHHHHB   HHHHHHHHHH               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  1001 SNIMNFFKTEIKRPLIETNGETGEIVWDKGRDFATVRKVLSMPQVNIVKK 1050          4UN3
+STR       HTTTTTTTTTTTTTTEEETTTTT EEEETTTHHHHHHHHHH   TEEEE                4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  1051 TEVQTGGFSKESILPKRNSDKLIARKKDWDPKKYGGFDSPTVAYSVLVVA 1100          4UN3
+STR        B      EE   B    TTTTBTTBTTBTTTTTTBBEEE EEEEEEEEE               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  1101 KVEKGKSKKLKSVKELLGITIMERSSFEKNPIDFLEAKGYKEVKKDLIIK 1150          4UN3
+STR       EEEETTTTEEEEEEEEEEEEGGGHHHHHH HHHHHHHH EETT GGG EE               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  1151 LPKYSLFELENGRKRMLASAGELQKGNELALPSKYVNFLYLASHEQKQLF 1200          4UN3
+STR       ETBTEEEETTTTTEEEE TTTTEEE       HHHHHHHHHHHHHHHHHH               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  1201 VEQHKHYLDEIIEQISEFSKRVILADANLDKVLSAYNKHRDKPIREQAEN 1250          4UN3
+STR       HHHHHHHHHHHHHHHHHHHHHHH  HHHHHHHHHHHHHHTTT HHHHHHH               4UN3
+REM                                                                        4UN3
+REM                .         .         .         .         .               4UN3
+SEQ  1251 IIHLFTLTNLGAPAAFKYFDTTIDRKRYTSTKEVLDATLIHQSITGLYET 1300          4UN3
+STR       HHHHGGG   B    EETTTTEE    B   GGGGG EEEEETTTTTTEE               4UN3
+REM                                                                        4UN3
+REM                                                                        4UN3
+SEQ  1301 RIDLSQ                                             1306          4UN3
+STR       EEETT                                                            4UN3
+REM                                                                        4UN3
+REM                                                                        4UN3
+REM                                                                        4UN3
+LOC  AlphaHelix   ALA    59 B      VAL     93 B                            4UN3
+LOC  AlphaHelix   SER    96 B      GLU    103 B                            4UN3
+LOC  AlphaHelix   ILE   122 B      LYS    131 B                            4UN3
+LOC  AlphaHelix   ILE   135 B      ASP    144 B                            4UN3
+LOC  AlphaHelix   LEU   151 B      LYS    163 B                            4UN3
+LOC  AlphaHelix   ASP   180 B      LEU    195 B                            4UN3
+LOC  AlphaHelix   ALA   208 B      SER    213 B                            4UN3
+LOC  AlphaHelix   LYS   218 B      GLN    228 B                            4UN3
+LOC  AlphaHelix   LEU   237 B      LEU    246 B                            4UN3
+LOC  AlphaHelix   THR   270 B      ILE    282 B                            4UN3
+LOC  AlphaHelix   ALA   287 B      ALA    299 B                            4UN3
+LOC  AlphaHelix   LEU   302 B      LEU    306 B                            4UN3
+LOC  AlphaHelix   PRO   316 B      GLN    342 B                            4UN3
+LOC  AlphaHelix   TYR   347 B      PHE    352 B                            4UN3
+LOC  AlphaHelix   TYR   359 B      ASP    364 B                            4UN3
+LOC  AlphaHelix   GLN   369 B      LYS    382 B                            4UN3
+LOC  AlphaHelix   THR   386 B      ARG    395 B                            4UN3
+LOC  AlphaHelix   HIS   412 B      GLU    427 B                            4UN3
+LOC  AlphaHelix   PRO   431 B      THR    445 B                            4UN3
+LOC  AlphaHelix   ASN   477 B      VAL    481 B                            4UN3
+LOC  AlphaHelix   LYS   484 B      ARG    494 B                            4UN3
+LOC  AlphaHelix   LEU   513 B      THR    525 B                            4UN3
+LOC  AlphaHelix   GLY   542 B      LEU    552 B                            4UN3
+LOC  AlphaHelix   VAL   561 B      GLU    573 B                            4UN3
+LOC  AlphaHelix   GLY   592 B      ILE    601 B                            4UN3
+LOC  AlphaHelix   LYS   604 B      ASP    608 B                            4UN3
+LOC  AlphaHelix   GLU   613 B      LEU    625 B                            4UN3
+LOC  AlphaHelix   ARG   629 B      LEU    636 B                            4UN3
+LOC  AlphaHelix   ASP   645 B      ARG    653 B                            4UN3
+LOC  AlphaHelix   ARG   664 B      GLY    669 B                            4UN3
+LOC  AlphaHelix   ILE   679 B      LYS    684 B                            4UN3
+LOC  AlphaHelix   PHE   693 B      ILE    697 B                            4UN3
+LOC  AlphaHelix   THR   703 B      GLN    709 B                            4UN3
+LOC  AlphaHelix   LEU   720 B      ASN    726 B                            4UN3
+LOC  AlphaHelix   PRO   731 B      MET    751 B                            4UN3
+LOC  AlphaHelix   ASN   776 B      LEU    791 B                            4UN3
+LOC  AlphaHelix   GLN   794 B      GLU    798 B                            4UN3
+LOC  AlphaHelix   GLU   809 B      GLN    817 B                            4UN3
+LOC  AlphaHelix   GLU   873 B      ALA    889 B                            4UN3
+LOC  AlphaHelix   GLN   894 B      THR    901 B                            4UN3
+LOC  AlphaHelix   GLU   910 B      LEU    921 B                            4UN3
+LOC  AlphaHelix   GLN   926 B      MET    939 B                            4UN3
+LOC  AlphaHelix   SER   960 B      PHE    970 B                            4UN3
+LOC  AlphaHelix   ASN   980 B      LYS   1000 B                            4UN3
+LOC  AlphaHelix   GLU  1005 B      PHE   1008 B                            4UN3
+LOC  AlphaHelix   GLY  1030 B      SER   1040 B                            4UN3
+LOC  AlphaHelix   ASP  1079 B      SER   1088 B                            4UN3
+LOC  AlphaHelix   ARG  1171 B      LYS   1176 B                            4UN3
+LOC  AlphaHelix   PRO  1178 B      LYS   1185 B                            4UN3
+LOC  AlphaHelix   SER  1230 B      ILE   1281 B                            4UN3
+LOC  AlphaHelix   ASP  1284 B      HIS   1297 B                            4UN3
+LOC  AlphaHelix   ILE  1302 B      LEU   1312 B                            4UN3
+LOC  310Helix     GLU   108 B      ASP    110 B                            4UN3
+LOC  310Helix     LYS   253 B      ASN    255 B                            4UN3
+LOC  310Helix     ASP   284 B      TYR    286 B                            4UN3
+LOC  310Helix     PRO   344 B      LYS    346 B                            4UN3
+LOC  310Helix     GLU   610 B      ASN    612 B                            4UN3
+LOC  310Helix     LYS   637 B      TYR    639 B                            4UN3
+LOC  310Helix     ASN   803 B      GLN    805 B                            4UN3
+LOC  310Helix     LEU   833 B      ASP    835 B                            4UN3
+LOC  310Helix     ILE   852 B      ASN    854 B                            4UN3
+LOC  310Helix     ASP   861 B      ARG    864 B                            4UN3
+LOC  310Helix     LYS   902 B      ARG    905 B                            4UN3
+LOC  310Helix     PRO  1002 B      LEU   1004 B                            4UN3
+LOC  310Helix     ILE  1168 B      GLU   1170 B                            4UN3
+LOC  310Helix     LYS  1192 B      LEU   1194 B                            4UN3
+LOC  310Helix     PHE  1313 B      LEU   1315 B                            4UN3
+LOC  310Helix     LYS  1340 B      ASP   1344 B                            4UN3
+LOC  Strand       SER     6 B      ILE     11 B                            4UN3
+LOC  Strand       SER    15 B      ILE     21 B                            4UN3
+LOC  Strand       SER    29 B      GLY     36 B                            4UN3
+LOC  Strand       SER    42 B      ASN     46 B                            4UN3
+LOC  Strand       ILE    48 B      LEU     52 B                            4UN3
+LOC  Strand       VAL   507 B      PRO    509 B                            4UN3
+LOC  Strand       LYS   528 B      VAL    530 B                            4UN3
+LOC  Strand       ALA   538 B      PHE    539 B                            4UN3
+LOC  Strand       VAL   559 B      THR    560 B                            4UN3
+LOC  Strand       GLU   579 B      ILE    580 B                            4UN3
+LOC  Strand       ARG   586 B      PHE    587 B                            4UN3
+LOC  Strand       TRP   659 B      SER    663 B                            4UN3
+LOC  Strand       ARG   671 B      ASP    672 B                            4UN3
+LOC  Strand       LYS   677 B      THR    678 B                            4UN3
+LOC  Strand       ASN   758 B      MET    763 B                            4UN3
+LOC  Strand       ARG   820 B      ASP    821 B                            4UN3
+LOC  Strand       GLN   826 B      GLU    827 B                            4UN3
+LOC  Strand       ASP   837 B      ALA    840 B                            4UN3
+LOC  Strand       LYS   855 B      THR    858 B                            4UN3
+LOC  Strand       LYS   942 B      ASP    944 B                            4UN3
+LOC  Strand       LYS   948 B      ILE    950 B                            4UN3
+LOC  Strand       LYS   954 B      LEU    958 B                            4UN3
+LOC  Strand       ILE  1063 B      THR   1065 B                            4UN3
+LOC  Strand       ILE  1072 B      ASP   1075 B                            4UN3
+LOC  Strand       ASN  1093 B      LYS   1096 B                            4UN3
+LOC  Strand       SER  1106 B      LYS   1107 B                            4UN3
+LOC  Strand       ASP  1135 B      PRO   1137 B                            4UN3
+LOC  Strand       VAL  1139 B      LYS   1151 B                            4UN3
+LOC  Strand       LYS  1156 B      THR   1167 B                            4UN3
+LOC  Strand       TYR  1187 B      LYS   1188 B                            4UN3
+LOC  Strand       ILE  1196 B      LEU   1198 B                            4UN3
+LOC  Strand       SER  1202 B      GLU   1205 B                            4UN3
+LOC  Strand       LYS  1211 B      LEU   1214 B                            4UN3
+LOC  Strand       LEU  1220 B      LYS   1222 B                            4UN3
+LOC  Strand       PHE  1324 B      LYS   1325 B                            4UN3
+LOC  Strand       THR  1330 B      ILE   1331 B                            4UN3
+LOC  Strand       THR  1346 B      GLN   1350 B                            4UN3
+LOC  Strand       GLU  1357 B      ASP   1361 B                            4UN3
+LOC  TurnI        GLY    12 B      SER     15 B                            4UN3
+LOC  TurnI        THR    22 B      TYR     25 B                            4UN3
+LOC  TurnI        GLU   103 B      LEU    106 B                            4UN3
+LOC  TurnIV       LYS   111 B      GLU    114 B                            4UN3
+LOC  TurnIV       HIS   116 B      PHE    119 B                            4UN3
+LOC  TurnI        PRO   117 B      GLY    120 B                            4UN3
+LOC  TurnVIII     TYR   132 B      ILE    135 B                            4UN3
+LOC  TurnIV       PHE   196 B      ASN    199 B                            4UN3
+LOC  TurnVIII     GLU   197 B      PRO    200 B                            4UN3
+LOC  TurnI'       ALA   203 B      VAL    206 B                            4UN3
+LOC  TurnII       LEU   229 B      GLU    232 B                            4UN3
+LOC  TurnI        LYS   233 B      GLY    236 B                            4UN3
+LOC  TurnI        GLN   265 B      LYS    268 B                            4UN3
+LOC  TurnIV       ASN   309 B      ILE    312 B                            4UN3
+LOC  TurnIV       THR   310 B      THR    313 B                            4UN3
+LOC  TurnIV       THR   313 B      PRO    316 B                            4UN3
+LOC  TurnI        ASP   353 B      LYS    356 B                            4UN3
+LOC  TurnIV       GLN   354 B      ASN    357 B                            4UN3
+LOC  TurnIV       ASP   397 B      ARG    400 B                            4UN3
+LOC  TurnVIII     LYS   401 B      THR    404 B                            4UN3
+LOC  TurnI        THR   404 B      ASN    407 B                            4UN3
+LOC  TurnI        ASP   406 B      SER    409 B                            4UN3
+LOC  TurnI        ASN   407 B      ILE    410 B                            4UN3
+LOC  TurnI        GLU   427 B      TYR    430 B                            4UN3
+LOC  TurnVIII     ASP   428 B      PRO    431 B                            4UN3
+LOC  TurnI        PRO   449 B      VAL    452 B                            4UN3
+LOC  TurnIV       TYR   450 B      GLY    453 B                            4UN3
+LOC  TurnIV       ALA   456 B      ASN    459 B                            4UN3
+LOC  TurnI        SER   460 B      ALA    463 B                            4UN3
+LOC  TurnIV       ARG   467 B      GLU    470 B                            4UN3
+LOC  TurnI        THR   474 B      ASN    477 B                            4UN3
+LOC  TurnI        ASP   499 B      LEU    502 B                            4UN3
+LOC  TurnVIII     LYS   500 B      PRO    503 B                            4UN3
+LOC  TurnI        LEU   502 B      GLU    505 B                            4UN3
+LOC  TurnI        PRO   509 B      SER    512 B                            4UN3
+LOC  TurnIV       THR   531 B      MET    534 B                            4UN3
+LOC  TurnI        LEU   552 B      THR    555 B                            4UN3
+LOC  TurnIV       PHE   553 B      ASN    556 B                            4UN3
+LOC  TurnVIII     ASN   556 B      VAL    559 B                            4UN3
+LOC  TurnVIII     PHE   575 B      VAL    578 B                            4UN3
+LOC  TurnIV       ILE   580 B      VAL    583 B                            4UN3
+LOC  TurnIV       VAL   583 B      ARG    586 B                            4UN3
+LOC  TurnIV       GLU   584 B      PHE    587 B                            4UN3
+LOC  TurnI        TYR   639 B      LEU    642 B                            4UN3
+LOC  TurnI        ALA   640 B      PHE    643 B                            4UN3
+LOC  TurnIV       ASP   672 B      SER    675 B                            4UN3
+LOC  TurnI        LYS   673 B      GLY    676 B                            4UN3
+LOC  TurnIV       ASP   686 B      ALA    689 B                            4UN3
+LOC  TurnVIII     GLY   687 B      ASN    690 B                            4UN3
+LOC  TurnI        ASP   699 B      LEU    702 B                            4UN3
+LOC  TurnIV       ASP   700 B      THR    703 B                            4UN3
+LOC  TurnI'       MET   751 B      HIS    754 B                            4UN3
+LOC  TurnVIII     PRO   756 B      ILE    759 B                            4UN3
+LOC  TurnI        GLN   805 B      ASN    808 B                            4UN3
+LOC  TurnIV       LEU   806 B      GLU    809 B                            4UN3
+LOC  TurnIV       GLN   817 B      ARG    820 B                            4UN3
+LOC  TurnI        ASP   821 B      VAL    824 B                            4UN3
+LOC  TurnIV       MET   822 B      ASP    825 B                            4UN3
+LOC  TurnI        ASP   829 B      ARG    832 B                            4UN3
+LOC  TurnIV       ILE   830 B      LEU    833 B                            4UN3
+LOC  TurnVIII     ALA   840 B      PRO    843 B                            4UN3
+LOC  TurnI        PRO   843 B      PHE    846 B                            4UN3
+LOC  TurnIV       GLN   844 B      LEU    847 B                            4UN3
+LOC  TurnVIII     SER   845 B      LYS    848 B                            4UN3
+LOC  TurnVIII     THR   858 B      ASP    861 B                            4UN3
+LOC  TurnI        LYS   866 B      ASN    869 B                            4UN3
+LOC  TurnVIII     LYS   890 B      THR    893 B                            4UN3
+LOC  TurnI        ASP   944 B      ASP    947 B                            4UN3
+LOC  TurnVIII     ARG   951 B      LYS    954 B                            4UN3
+LOC  TurnI        VAL   975 B      ILE    978 B                            4UN3
+LOC  TurnIV       ARG   976 B      ASN    979 B                            4UN3
+LOC  TurnI        ASN  1041 B      ASN   1044 B                            4UN3
+LOC  TurnI        MET  1043 B      PHE   1046 B                            4UN3
+LOC  TurnI        ASN  1044 B      LYS   1047 B                            4UN3
+LOC  TurnVIII     LYS  1047 B      ILE   1050 B                            4UN3
+LOC  TurnIV       THR  1048 B      LYS   1059 B                            4UN3
+LOC  TurnIV       GLU  1049 B      ARG   1060 B                            4UN3
+LOC  TurnVIII     PRO  1061 B      GLU   1064 B                            4UN3
+LOC  TurnI        ASN  1066 B      THR   1069 B                            4UN3
+LOC  TurnI        GLY  1067 B      GLY   1070 B                            4UN3
+LOC  TurnI        ASP  1075 B      ARG   1078 B                            4UN3
+LOC  TurnIV       LYS  1076 B      ASP   1079 B                            4UN3
+LOC  TurnI        SER  1116 B      LEU   1119 B                            4UN3
+LOC  TurnVIII     ALA  1121 B      LYS   1124 B                            4UN3
+LOC  TurnI        LYS  1123 B      TRP   1126 B                            4UN3
+LOC  TurnI        ASP  1127 B      LYS   1130 B                            4UN3
+LOC  TurnI        PRO  1128 B      TYR   1131 B                            4UN3
+LOC  TurnI        LYS  1129 B      GLY   1132 B                            4UN3
+LOC  TurnIV       VAL  1139 B      SER   1142 B                            4UN3
+LOC  TurnI        GLY  1152 B      LYS   1155 B                            4UN3
+LOC  TurnIV       TYR  1187 B      VAL   1190 B                            4UN3
+LOC  TurnII       PRO  1199 B      SER   1202 B                            4UN3
+LOC  TurnIV       LEU  1206 B      GLY   1209 B                            4UN3
+LOC  TurnIV       GLU  1207 B      ARG   1210 B                            4UN3
+LOC  TurnI        SER  1216 B      GLU   1219 B                            4UN3
+LOC  TurnI        HIS  1297 B      LYS   1300 B                            4UN3
+LOC  TurnIV       LYS  1325 B      ASP   1328 B                            4UN3
+LOC  TurnIV       TYR  1326 B      THR   1329 B                            4UN3
+LOC  TurnI        SER  1351 B      GLY   1354 B                            4UN3
+LOC  TurnVIII     GLY  1354 B      GLU   1357 B                            4UN3
+LOC  GammaInv     VAL   206 B      ALA    208 B                            4UN3
+LOC  GammaInv     VAL  1092 B      ILE   1094 B                            4UN3
+LOC  GammaInv     ASP  1361 B      SER   1363 B                            4UN3
+REM                                                                        4UN3
+REM  --------------- Detailed secondary structure assignment-------------  4UN3
+REM                                                                        4UN3
+REM  |---Residue---|    |--Structure--|   |-Phi-|   |-Psi-|  |-Area-|      4UN3
+ASG  LYS B    4    1    C          Coil    360.00    -50.89     130.5      4UN3
+ASG  TYR B    5    2    C          Coil   -134.43    149.97       4.6      4UN3
+ASG  SER B    6    3    E        Strand   -121.91    157.26       7.0      4UN3
+ASG  ILE B    7    4    E        Strand   -114.16    131.63       0.0      4UN3
+ASG  GLY B    8    5    E        Strand   -105.70    135.47       0.0      4UN3
+ASG  LEU B    9    6    E        Strand   -135.19    134.58       0.0      4UN3
+ASG  ASP B   10    7    E        Strand   -123.93    110.35      14.9      4UN3
+ASG  ILE B   11    8    E        Strand    -97.68    117.83       0.8      4UN3
+ASG  GLY B   12    9    T          Turn   -128.43    178.69       6.0      4UN3
+ASG  THR B   13   10    T          Turn    -77.47    -24.95      58.3      4UN3
+ASG  ASN B   14   11    T          Turn   -126.57      8.20      70.4      4UN3
+ASG  SER B   15   12    E        Strand   -159.75    145.01      10.6      4UN3
+ASG  VAL B   16   13    E        Strand   -130.38    103.36       0.0      4UN3
+ASG  GLY B   17   14    E        Strand    -79.04    143.81       0.2      4UN3
+ASG  TRP B   18   15    E        Strand   -142.29    147.18       0.2      4UN3
+ASG  ALA B   19   16    E        Strand   -151.92    153.77       0.0      4UN3
+ASG  VAL B   20   17    E        Strand   -122.95    127.45       1.2      4UN3
+ASG  ILE B   21   18    E        Strand   -123.89    157.74       1.8      4UN3
+ASG  THR B   22   19    T          Turn   -102.78   -176.32      57.2      4UN3
+ASG  ASP B   23   20    T          Turn    -56.17    -31.67      94.9      4UN3
+ASG  GLU B   24   21    T          Turn   -104.82     29.90      67.5      4UN3
+ASG  TYR B   25   22    T          Turn     60.87     26.46       1.2      4UN3
+ASG  LYS B   26   23    C          Coil    -95.15    145.18     110.1      4UN3
+ASG  VAL B   27   24    C          Coil    -98.16    118.56      15.5      4UN3
+ASG  PRO B   28   25    C          Coil    -59.44    150.63      31.2      4UN3
+ASG  SER B   29   26    E        Strand   -119.23    123.82      64.5      4UN3
+ASG  LYS B   30   27    E        Strand   -124.17    153.39      75.7      4UN3
+ASG  LYS B   31   28    E        Strand    -93.92    118.18     140.0      4UN3
+ASG  PHE B   32   29    E        Strand   -106.68    141.33      13.5      4UN3
+ASG  LYS B   33   30    E        Strand    -68.64    138.42     146.6      4UN3
+ASG  VAL B   34   31    E        Strand   -107.73    123.90      10.1      4UN3
+ASG  LEU B   35   32    E        Strand    -92.63    170.00      90.7      4UN3
+ASG  GLY B   36   33    E        Strand    118.02   -168.39      49.4      4UN3
+ASG  ASN B   37   34    C          Coil   -101.47     23.55      87.8      4UN3
+ASG  THR B   38   35    C          Coil    -97.60   -176.18      31.6      4UN3
+ASG  ASP B   39   36    C          Coil    -72.67    -51.58     153.3      4UN3
+ASG  ARG B   40   37    C          Coil    -64.55    138.88     135.8      4UN3
+ASG  HIS B   41   38    C          Coil   -108.83     -9.93     137.5      4UN3
+ASG  SER B   42   39    E        Strand   -167.08    161.32      49.8      4UN3
+ASG  ILE B   43   40    E        Strand   -145.92    137.36      28.3      4UN3
+ASG  LYS B   44   41    E        Strand    -81.75    135.66      93.6      4UN3
+ASG  LYS B   45   42    E        Strand   -134.00    136.32      10.6      4UN3
+ASG  ASN B   46   43    E        Strand    -74.69    144.96       7.0      4UN3
+ASG  LEU B   47   44    C          Coil    -85.67     55.93       0.2      4UN3
+ASG  ILE B   48   45    E        Strand   -142.27    144.33       0.6      4UN3
+ASG  GLY B   49   46    E        Strand   -179.64   -169.86       0.0      4UN3
+ASG  ALA B   50   47    E        Strand   -157.69    133.26       0.4      4UN3
+ASG  LEU B   51   48    E        Strand    -89.10    131.44       2.8      4UN3
+ASG  LEU B   52   49    E        Strand   -113.76    146.85      16.0      4UN3
+ASG  PHE B   53   50    C          Coil   -159.70    148.05       3.3      4UN3
+ASG  ASP B   54   51    C          Coil    -62.11    150.70      48.8      4UN3
+ASG  SER B   55   52    C          Coil    -57.89    142.98      59.9      4UN3
+ASG  GLY B   56   53    C          Coil    -75.63    140.88      19.2      4UN3
+ASG  GLU B   57   54    C          Coil   -107.96    149.24     169.7      4UN3
+ASG  THR B   58   55    C          Coil    -69.46    165.69      78.5      4UN3
+ASG  ALA B   59   56    H    AlphaHelix    -86.11      6.73      71.3      4UN3
+ASG  GLU B   60   57    H    AlphaHelix    -61.33    -60.02     102.3      4UN3
+ASG  ALA B   61   58    H    AlphaHelix    -54.12    -41.48      53.3      4UN3
+ASG  THR B   62   59    H    AlphaHelix    -58.81    -43.44      80.7      4UN3
+ASG  ARG B   63   60    H    AlphaHelix    -61.47    -50.02     119.3      4UN3
+ASG  LEU B   64   61    H    AlphaHelix    -54.86    -51.51      82.9      4UN3
+ASG  LYS B   65   62    H    AlphaHelix    -56.01    -47.74      96.6      4UN3
+ASG  ARG B   66   63    H    AlphaHelix    -61.06    -52.24      38.0      4UN3
+ASG  THR B   67   64    H    AlphaHelix    -59.65    -42.25      57.0      4UN3
+ASG  ALA B   68   65    H    AlphaHelix    -58.59    -44.50      38.1      4UN3
+ASG  ARG B   69   66    H    AlphaHelix    -52.80    -55.96     140.7      4UN3
+ASG  ARG B   70   67    H    AlphaHelix    -51.44    -44.09      58.4      4UN3
+ASG  ARG B   71   68    H    AlphaHelix    -56.03    -50.38     168.4      4UN3
+ASG  TYR B   72   69    H    AlphaHelix    -56.08    -51.60     146.5      4UN3
+ASG  THR B   73   70    H    AlphaHelix    -62.04    -39.54      75.8      4UN3
+ASG  ARG B   74   71    H    AlphaHelix    -66.79    -38.57      85.4      4UN3
+ASG  ARG B   75   72    H    AlphaHelix    -59.96    -46.90      65.3      4UN3
+ASG  LYS B   76   73    H    AlphaHelix    -53.72    -47.24      94.3      4UN3
+ASG  ASN B   77   74    H    AlphaHelix    -60.17    -37.26      72.2      4UN3
+ASG  ARG B   78   75    H    AlphaHelix    -55.21    -55.14      28.1      4UN3
+ASG  ILE B   79   76    H    AlphaHelix    -55.30    -42.51      14.8      4UN3
+ASG  CYS B   80   77    H    AlphaHelix    -62.38    -42.04      54.2      4UN3
+ASG  TYR B   81   78    H    AlphaHelix    -56.28    -51.25      56.0      4UN3
+ASG  LEU B   82   79    H    AlphaHelix    -54.43    -48.56       0.0      4UN3
+ASG  GLN B   83   80    H    AlphaHelix    -64.51    -35.30      21.4      4UN3
+ASG  GLU B   84   81    H    AlphaHelix    -68.82    -31.79     144.1      4UN3
+ASG  ILE B   85   82    H    AlphaHelix    -66.88    -40.87      22.1      4UN3
+ASG  PHE B   86   83    H    AlphaHelix    -83.76     -8.52       0.0      4UN3
+ASG  SER B   87   84    H    AlphaHelix    -55.22    -60.33      54.2      4UN3
+ASG  ASN B   88   85    H    AlphaHelix    -56.90    -48.76     128.7      4UN3
+ASG  GLU B   89   86    H    AlphaHelix    -72.01    -23.10      59.0      4UN3
+ASG  MET B   90   87    H    AlphaHelix    -76.42    -34.84       3.2      4UN3
+ASG  ALA B   91   88    H    AlphaHelix    -59.18    -28.82      53.1      4UN3
+ASG  LYS B   92   89    H    AlphaHelix    -78.83    -38.74     153.6      4UN3
+ASG  VAL B   93   90    H    AlphaHelix    -77.32    -52.46      66.6      4UN3
+ASG  ASP B   94   91    C          Coil   -141.93    119.31      20.9      4UN3
+ASG  ASP B   95   92    C          Coil    -63.18    -37.37     142.2      4UN3
+ASG  SER B   96   93    H    AlphaHelix   -126.03     17.41      20.9      4UN3
+ASG  PHE B   97   94    H    AlphaHelix    -53.54    -57.71       1.1      4UN3
+ASG  PHE B   98   95    H    AlphaHelix    -61.02    -35.82      27.1      4UN3
+ASG  HIS B   99   96    H    AlphaHelix    -60.19    -50.42     115.8      4UN3
+ASG  ARG B  100   97    H    AlphaHelix    -59.38    -34.64      10.6      4UN3
+ASG  LEU B  101   98    H    AlphaHelix    -64.16    -47.69      32.9      4UN3
+ASG  GLU B  102   99    H    AlphaHelix    -73.32    -23.43     100.9      4UN3
+ASG  GLU B  103  100    H    AlphaHelix   -101.06     18.76      20.6      4UN3
+ASG  SER B  104  101    T          Turn    -64.77    -23.17      73.2      4UN3
+ASG  PHE B  105  102    T          Turn    -77.36    -27.62      85.9      4UN3
+ASG  LEU B  106  103    T          Turn    -66.11    147.34      42.7      4UN3
+ASG  VAL B  107  104    C          Coil    -69.64    153.82      62.0      4UN3
+ASG  GLU B  108  105    G      310Helix    -51.29    -38.64     111.1      4UN3
+ASG  GLU B  109  106    G      310Helix    -58.30    -33.53     152.9      4UN3
+ASG  ASP B  110  107    G      310Helix    -90.84    -15.32      50.9      4UN3
+ASG  LYS B  111  108    T          Turn    -68.65    144.18      34.1      4UN3
+ASG  LYS B  112  109    T          Turn    -82.50    -33.54     180.0      4UN3
+ASG  HIS B  113  110    T          Turn   -119.96   -176.83      65.5      4UN3
+ASG  GLU B  114  111    T          Turn    -74.61    157.82      92.3      4UN3
+ASG  ARG B  115  112    C          Coil    -72.53    -23.55     120.2      4UN3
+ASG  HIS B  116  113    T          Turn    -85.96    110.43      21.7      4UN3
+ASG  PRO B  117  114    T          Turn    -63.93    -50.34      35.9      4UN3
+ASG  ILE B  118  115    T          Turn    -69.03    -55.76      14.2      4UN3
+ASG  PHE B  119  116    T          Turn   -112.30    -21.52      34.0      4UN3
+ASG  GLY B  120  117    T          Turn     95.40     -1.01      24.4      4UN3
+ASG  ASN B  121  118    C          Coil   -142.83    164.76      53.1      4UN3
+ASG  ILE B  122  119    H    AlphaHelix    -60.92    -54.65      98.4      4UN3
+ASG  VAL B  123  120    H    AlphaHelix    -56.16    -49.56     103.9      4UN3
+ASG  ASP B  124  121    H    AlphaHelix    -67.60    -34.57      74.3      4UN3
+ASG  GLU B  125  122    H    AlphaHelix    -68.33    -52.10      17.4      4UN3
+ASG  VAL B  126  123    H    AlphaHelix    -55.11    -40.88      87.8      4UN3
+ASG  ALA B  127  124    H    AlphaHelix    -61.04    -46.32      52.5      4UN3
+ASG  TYR B  128  125    H    AlphaHelix    -55.22    -55.95      19.4      4UN3
+ASG  HIS B  129  126    H    AlphaHelix    -62.79    -26.91     100.3      4UN3
+ASG  GLU B  130  127    H    AlphaHelix    -73.09    -38.77     156.4      4UN3
+ASG  LYS B  131  128    H    AlphaHelix    -79.26    -36.95     128.9      4UN3
+ASG  TYR B  132  129    T          Turn   -126.73     85.01      15.8      4UN3
+ASG  PRO B  133  130    T          Turn    -61.04    -33.72      45.5      4UN3
+ASG  THR B  134  131    T          Turn   -123.66    162.98      20.3      4UN3
+ASG  ILE B  135  132    H    AlphaHelix    -62.57    -30.79      38.4      4UN3
+ASG  TYR B  136  133    H    AlphaHelix    -68.96    -30.26      13.8      4UN3
+ASG  HIS B  137  134    H    AlphaHelix    -56.31    -50.33      30.3      4UN3
+ASG  LEU B  138  135    H    AlphaHelix    -63.21    -38.12       0.2      4UN3
+ASG  ARG B  139  136    H    AlphaHelix    -59.63    -53.16       0.4      4UN3
+ASG  LYS B  140  137    H    AlphaHelix    -63.58    -44.96      57.1      4UN3
+ASG  LYS B  141  138    H    AlphaHelix    -60.55    -39.01      49.2      4UN3
+ASG  LEU B  142  139    H    AlphaHelix    -74.53    -20.91       1.4      4UN3
+ASG  VAL B  143  140    H    AlphaHelix    -83.56    -44.64       0.0      4UN3
+ASG  ASP B  144  141    H    AlphaHelix    -86.88    -38.51      43.2      4UN3
+ASG  SER B  145  142    C          Coil    -66.51    168.53      26.5      4UN3
+ASG  THR B  146  143    C          Coil   -119.90    -11.81      95.0      4UN3
+ASG  ASP B  147  144    C          Coil    -64.87    145.73     102.3      4UN3
+ASG  LYS B  148  145    C          Coil    -61.99    134.42     121.5      4UN3
+ASG  ALA B  149  146    C          Coil   -111.38    156.56       7.1      4UN3
+ASG  ASP B  150  147    C          Coil    -62.48    134.24      50.4      4UN3
+ASG  LEU B  151  148    H    AlphaHelix    -61.22    -30.72       0.9      4UN3
+ASG  ARG B  152  149    H    AlphaHelix    -68.46    -39.23      32.5      4UN3
+ASG  LEU B  153  150    H    AlphaHelix    -67.15    -42.36      17.4      4UN3
+ASG  ILE B  154  151    H    AlphaHelix    -56.95    -50.45       0.2      4UN3
+ASG  TYR B  155  152    H    AlphaHelix    -56.13    -45.41       7.2      4UN3
+ASG  LEU B  156  153    H    AlphaHelix    -57.44    -44.72      31.9      4UN3
+ASG  ALA B  157  154    H    AlphaHelix    -61.82    -55.56       0.0      4UN3
+ASG  LEU B  158  155    H    AlphaHelix    -55.74    -45.86       0.0      4UN3
+ASG  ALA B  159  156    H    AlphaHelix    -62.93    -38.93      12.3      4UN3
+ASG  HIS B  160  157    H    AlphaHelix    -65.84    -38.02      29.0      4UN3
+ASG  MET B  161  158    H    AlphaHelix    -71.84    -32.54       0.0      4UN3
+ASG  ILE B  162  159    H    AlphaHelix    -78.87    -35.98       0.0      4UN3
+ASG  LYS B  163  160    H    AlphaHelix    -69.85    -29.31      79.1      4UN3
+ASG  PHE B  164  161    C          Coil   -134.11     76.06      72.6      4UN3
+ASG  ARG B  165  162    C          Coil    -78.96    -20.42      40.6      4UN3
+ASG  GLY B  166  163    C          Coil     91.52    174.30      30.3      4UN3
+ASG  HIS B  167  164    B        Bridge    -78.59    175.01      43.6      4UN3
+ASG  PHE B  168  165    C          Coil   -129.06     43.33      37.8      4UN3
+ASG  LEU B  169  166    C          Coil    -90.34    -19.91     137.3      4UN3
+ASG  ILE B  170  167    C          Coil   -105.06    131.72      58.5      4UN3
+ASG  GLU B  171  168    C          Coil    -92.37    161.20     159.5      4UN3
+ASG  GLY B  172  169    C          Coil     74.45   -163.04      59.7      4UN3
+ASG  ASP B  173  170    C          Coil   -118.48    154.04     119.2      4UN3
+ASG  LEU B  174  171    C          Coil   -107.97    147.01      31.4      4UN3
+ASG  ASN B  175  172    C          Coil   -140.02     88.45     131.5      4UN3
+ASG  PRO B  176  173    C          Coil    -43.37    133.05      51.2      4UN3
+ASG  ASP B  177  174    C          Coil   -149.55     76.00      65.2      4UN3
+ASG  ASN B  178  175    C          Coil    -77.65     -2.94      13.2      4UN3
+ASG  SER B  179  176    C          Coil    -60.85    -41.93      12.8      4UN3
+ASG  ASP B  180  177    H    AlphaHelix   -108.04     29.28      63.1      4UN3
+ASG  VAL B  181  178    H    AlphaHelix    -62.15    -40.27       0.4      4UN3
+ASG  ASP B  182  179    H    AlphaHelix    -64.06    -49.94      63.2      4UN3
+ASG  LYS B  183  180    H    AlphaHelix    -63.80    -37.37     130.2      4UN3
+ASG  LEU B  184  181    H    AlphaHelix    -69.23    -46.78      28.7      4UN3
+ASG  PHE B  185  182    H    AlphaHelix    -59.47    -46.31       4.8      4UN3
+ASG  ILE B  186  183    H    AlphaHelix    -58.54    -32.83      76.8      4UN3
+ASG  GLN B  187  184    H    AlphaHelix    -72.40    -41.14      88.4      4UN3
+ASG  LEU B  188  185    H    AlphaHelix    -58.96    -54.20       0.0      4UN3
+ASG  VAL B  189  186    H    AlphaHelix    -52.38    -38.72       4.8      4UN3
+ASG  GLN B  190  187    H    AlphaHelix    -62.26    -58.56     111.0      4UN3
+ASG  THR B  191  188    H    AlphaHelix    -61.61    -37.56      35.1      4UN3
+ASG  TYR B  192  189    H    AlphaHelix    -59.55    -46.48      16.6      4UN3
+ASG  ASN B  193  190    H    AlphaHelix    -65.17    -28.23      32.8      4UN3
+ASG  GLN B  194  191    H    AlphaHelix    -66.05    -49.89     140.2      4UN3
+ASG  LEU B  195  192    H    AlphaHelix    -67.78    -25.39      50.9      4UN3
+ASG  PHE B  196  193    T          Turn   -122.79     71.44      61.5      4UN3
+ASG  GLU B  197  194    T          Turn    -58.76    -35.77     170.9      4UN3
+ASG  GLU B  198  195    T          Turn    -58.34    -48.16     175.2      4UN3
+ASG  ASN B  199  196    T          Turn   -130.34    108.86     114.1      4UN3
+ASG  PRO B  200  197    T          Turn    -98.61    146.48      88.8      4UN3
+ASG  ILE B  201  198    C          Coil    -86.19    139.01      10.6      4UN3
+ASG  ASN B  202  199    C          Coil    -88.80    130.10     105.4      4UN3
+ASG  ALA B  203  200    T          Turn    -57.28    -36.58      34.5      4UN3
+ASG  SER B  204  201    T          Turn     65.11      6.82      56.8      4UN3
+ASG  GLY B  205  202    T          Turn     64.85     34.88      81.1      4UN3
+ASG  VAL B  206  203    T          Turn    -79.14    112.82      16.4      4UN3
+ASG  ASP B  207  204    T          Turn    -67.56     79.47      98.7      4UN3
+ASG  ALA B  208  205    H    AlphaHelix    -61.00    -41.69       3.4      4UN3
+ASG  LYS B  209  206    H    AlphaHelix    -50.58    -51.54      46.3      4UN3
+ASG  ALA B  210  207    H    AlphaHelix    -67.33    -47.29      51.1      4UN3
+ASG  ILE B  211  208    H    AlphaHelix    -65.42    -44.40      30.8      4UN3
+ASG  LEU B  212  209    H    AlphaHelix    -78.92    -28.59       4.0      4UN3
+ASG  SER B  213  210    H    AlphaHelix    -99.05      3.74      32.9      4UN3
+ASG  ALA B  214  211    C          Coil    -62.55    158.11      31.7      4UN3
+ASG  ARG B  215  212    C          Coil    -84.05     41.69      55.2      4UN3
+ASG  LEU B  216  213    C          Coil   -107.87    173.81      70.6      4UN3
+ASG  SER B  217  214    C          Coil    -72.30    154.71      43.5      4UN3
+ASG  LYS B  218  215    H    AlphaHelix    -46.71    -52.10      74.4      4UN3
+ASG  SER B  219  216    H    AlphaHelix    -57.34    -48.31      43.1      4UN3
+ASG  ARG B  220  217    H    AlphaHelix    -57.56    -47.59     130.3      4UN3
+ASG  ARG B  221  218    H    AlphaHelix    -58.57    -38.94       5.4      4UN3
+ASG  LEU B  222  219    H    AlphaHelix    -59.18    -51.88      19.6      4UN3
+ASG  GLU B  223  220    H    AlphaHelix    -54.71    -46.63      68.2      4UN3
+ASG  ASN B  224  221    H    AlphaHelix    -62.36    -44.23      64.6      4UN3
+ASG  LEU B  225  222    H    AlphaHelix    -55.15    -53.16       0.0      4UN3
+ASG  ILE B  226  223    H    AlphaHelix    -76.16    -11.58      14.6      4UN3
+ASG  ALA B  227  224    H    AlphaHelix    -72.90    -29.42      69.1      4UN3
+ASG  GLN B  228  225    H    AlphaHelix    -77.07     -4.76     100.6      4UN3
+ASG  LEU B  229  226    T          Turn   -112.49    125.38       8.9      4UN3
+ASG  PRO B  230  227    T          Turn    -83.18    127.80     104.3      4UN3
+ASG  GLY B  231  228    T          Turn     71.97     11.98      79.4      4UN3
+ASG  GLU B  232  229    T          Turn   -111.05    121.99      43.9      4UN3
+ASG  LYS B  233  230    T          Turn    -98.20    151.58     155.8      4UN3
+ASG  LYS B  234  231    T          Turn    -66.20    -26.33      96.4      4UN3
+ASG  ASN B  235  232    T          Turn    -79.42    -16.18     129.3      4UN3
+ASG  GLY B  236  233    T          Turn    -65.70    178.62      18.7      4UN3
+ASG  LEU B  237  234    H    AlphaHelix    -58.76    -55.64      16.2      4UN3
+ASG  PHE B  238  235    H    AlphaHelix    -62.67    -38.23       0.0      4UN3
+ASG  GLY B  239  236    H    AlphaHelix    -59.80    -47.67       0.0      4UN3
+ASG  ASN B  240  237    H    AlphaHelix    -58.78    -39.56      17.0      4UN3
+ASG  LEU B  241  238    H    AlphaHelix    -64.24    -43.75       0.0      4UN3
+ASG  ILE B  242  239    H    AlphaHelix    -60.38    -42.38       1.8      4UN3
+ASG  ALA B  243  240    H    AlphaHelix    -59.69    -40.44       7.2      4UN3
+ASG  LEU B  244  241    H    AlphaHelix    -62.49    -43.96       0.0      4UN3
+ASG  SER B  245  242    H    AlphaHelix    -67.59    -20.06       4.8      4UN3
+ASG  LEU B  246  243    H    AlphaHelix    -86.19     -5.78      10.9      4UN3
+ASG  GLY B  247  244    C          Coil     91.36     10.87      32.8      4UN3
+ASG  LEU B  248  245    C          Coil    -86.34    171.73      37.0      4UN3
+ASG  THR B  249  246    C          Coil   -111.94     98.40      75.7      4UN3
+ASG  PRO B  250  247    C          Coil    -98.53    158.23      11.6      4UN3
+ASG  ASN B  251  248    B        Bridge   -107.75    131.50      33.8      4UN3
+ASG  PHE B  252  249    C          Coil   -104.71      7.02       0.0      4UN3
+ASG  LYS B  253  250    G      310Helix    -73.20    -36.61      66.4      4UN3
+ASG  SER B  254  251    G      310Helix    -69.88    -25.53      86.5      4UN3
+ASG  ASN B  255  252    G      310Helix    -75.41    -31.37      51.4      4UN3
+ASG  PHE B  256  253    C          Coil   -110.80     14.90      33.5      4UN3
+ASG  ASP B  257  254    C          Coil     57.72     28.69     160.9      4UN3
+ASG  LEU B  258  255    C          Coil    -85.27    131.52      21.8      4UN3
+ASG  ALA B  259  256    C          Coil    -72.90    -26.02      96.1      4UN3
+ASG  GLU B  260  257    C          Coil    -92.61    145.98     126.6      4UN3
+ASG  ASP B  261  258    C          Coil    -65.77    134.27      90.8      4UN3
+ASG  ALA B  262  259    C          Coil   -128.47     78.70       8.3      4UN3
+ASG  LYS B  263  260    B        Bridge   -105.94    126.51      69.5      4UN3
+ASG  LEU B  264  261    C          Coil   -118.85    133.69       2.4      4UN3
+ASG  GLN B  265  262    T          Turn   -131.58    116.31      61.0      4UN3
+ASG  LEU B  266  263    T          Turn    -57.12    -30.38      32.2      4UN3
+ASG  SER B  267  264    T          Turn    -74.76    -33.49      96.4      4UN3
+ASG  LYS B  268  265    T          Turn    -64.94    135.27     104.2      4UN3
+ASG  ASP B  269  266    C          Coil    -64.06    -16.00      85.2      4UN3
+ASG  THR B  270  267    H    AlphaHelix    -89.24      8.46      35.9      4UN3
+ASG  TYR B  271  268    H    AlphaHelix    -59.33    -48.18      14.8      4UN3
+ASG  ASP B  272  269    H    AlphaHelix    -58.67    -39.08      93.4      4UN3
+ASG  ASP B  273  270    H    AlphaHelix    -75.40    -44.03      57.7      4UN3
+ASG  ASP B  274  271    H    AlphaHelix    -59.92    -45.68      53.6      4UN3
+ASG  LEU B  275  272    H    AlphaHelix    -63.12    -36.51      20.0      4UN3
+ASG  ASP B  276  273    H    AlphaHelix    -59.07    -49.36      77.2      4UN3
+ASG  ASN B  277  274    H    AlphaHelix    -61.25    -46.92      82.0      4UN3
+ASG  LEU B  278  275    H    AlphaHelix    -56.54    -44.77       2.3      4UN3
+ASG  LEU B  279  276    H    AlphaHelix    -70.20    -33.93      10.8      4UN3
+ASG  ALA B  280  277    H    AlphaHelix    -64.77    -36.82      79.5      4UN3
+ASG  GLN B  281  278    H    AlphaHelix    -71.59    -43.06      86.2      4UN3
+ASG  ILE B  282  279    H    AlphaHelix   -105.71     -9.27      25.9      4UN3
+ASG  GLY B  283  280    C          Coil    102.88    137.00      19.9      4UN3
+ASG  ASP B  284  281    G      310Helix    -77.96      4.21     105.5      4UN3
+ASG  GLN B  285  282    G      310Helix    -74.39     -4.12     114.9      4UN3
+ASG  TYR B  286  283    G      310Helix    -99.02      1.30      42.5      4UN3
+ASG  ALA B  287  284    H    AlphaHelix    -64.56    -46.84      28.3      4UN3
+ASG  ASP B  288  285    H    AlphaHelix    -58.38    -30.00     109.6      4UN3
+ASG  LEU B  289  286    H    AlphaHelix    -60.87    -52.97       2.3      4UN3
+ASG  PHE B  290  287    H    AlphaHelix    -66.17    -33.25       1.1      4UN3
+ASG  LEU B  291  288    H    AlphaHelix    -58.05    -44.30      96.2      4UN3
+ASG  ALA B  292  289    H    AlphaHelix    -64.31    -43.08       3.5      4UN3
+ASG  ALA B  293  290    H    AlphaHelix    -57.21    -41.02       0.0      4UN3
+ASG  LYS B  294  291    H    AlphaHelix    -68.52    -45.52      84.6      4UN3
+ASG  ASN B  295  292    H    AlphaHelix    -58.64    -41.12      64.4      4UN3
+ASG  LEU B  296  293    H    AlphaHelix    -68.88    -34.10       1.6      4UN3
+ASG  SER B  297  294    H    AlphaHelix    -66.95    -35.17       6.8      4UN3
+ASG  ASP B  298  295    H    AlphaHelix    -68.55    -41.24      83.1      4UN3
+ASG  ALA B  299  296    H    AlphaHelix    -72.55    -15.04       9.0      4UN3
+ASG  ILE B  300  297    C          Coil   -117.04     -8.67       5.9      4UN3
+ASG  LEU B  301  298    C          Coil    -46.12    -48.63      68.1      4UN3
+ASG  LEU B  302  299    H    AlphaHelix   -107.31     31.14      20.9      4UN3
+ASG  SER B  303  300    H    AlphaHelix    -65.75    -28.92       2.4      4UN3
+ASG  ASP B  304  301    H    AlphaHelix    -64.67    -31.23      65.6      4UN3
+ASG  ILE B  305  302    H    AlphaHelix    -93.45    -43.60      22.0      4UN3
+ASG  LEU B  306  303    H    AlphaHelix    -79.68    -44.11       6.2      4UN3
+ASG  ARG B  307  304    C          Coil     54.15      7.70      62.9      4UN3
+ASG  VAL B  308  305    C          Coil   -140.79    135.51      24.2      4UN3
+ASG  ASN B  309  306    T          Turn    -55.91    130.04      91.4      4UN3
+ASG  THR B  310  307    T          Turn    -75.18     -1.35      23.7      4UN3
+ASG  GLU B  311  308    T          Turn    -70.05    -50.54     139.5      4UN3
+ASG  ILE B  312  309    T          Turn    -57.01    -42.83     121.4      4UN3
+ASG  THR B  313  310    T          Turn   -140.92    159.16       7.4      4UN3
+ASG  LYS B  314  311    T          Turn    -94.15     11.06      93.4      4UN3
+ASG  ALA B  315  312    T          Turn   -133.77     69.52       0.0      4UN3
+ASG  PRO B  316  313    H    AlphaHelix    -63.93    -30.42      13.0      4UN3
+ASG  LEU B  317  314    H    AlphaHelix    -67.65    -60.97       4.2      4UN3
+ASG  SER B  318  315    H    AlphaHelix    -54.08    -36.34       0.0      4UN3
+ASG  ALA B  319  316    H    AlphaHelix    -66.55    -38.06       5.8      4UN3
+ASG  SER B  320  317    H    AlphaHelix    -66.38    -35.18       7.2      4UN3
+ASG  MET B  321  318    H    AlphaHelix    -66.60    -44.39       1.0      4UN3
+ASG  ILE B  322  319    H    AlphaHelix    -59.21    -37.23      20.4      4UN3
+ASG  LYS B  323  320    H    AlphaHelix    -58.16    -58.13      52.8      4UN3
+ASG  ARG B  324  321    H    AlphaHelix    -43.70    -47.30      33.4      4UN3
+ASG  TYR B  325  322    H    AlphaHelix    -58.48    -51.91      83.0      4UN3
+ASG  ASP B  326  323    H    AlphaHelix    -62.58    -45.87      64.8      4UN3
+ASG  GLU B  327  324    H    AlphaHelix    -63.61    -41.40      39.5      4UN3
+ASG  HIS B  328  325    H    AlphaHelix    -54.14    -49.43      21.4      4UN3
+ASG  HIS B  329  326    H    AlphaHelix    -57.40    -60.20     111.4      4UN3
+ASG  GLN B  330  327    H    AlphaHelix    -53.79    -50.69     107.5      4UN3
+ASG  ASP B  331  328    H    AlphaHelix    -68.04    -21.76      12.2      4UN3
+ASG  LEU B  332  329    H    AlphaHelix    -75.14    -46.07      20.6      4UN3
+ASG  THR B  333  330    H    AlphaHelix    -54.75    -49.04      83.4      4UN3
+ASG  LEU B  334  331    H    AlphaHelix    -59.24    -50.40      69.4      4UN3
+ASG  LEU B  335  332    H    AlphaHelix    -60.12    -46.51       5.0      4UN3
+ASG  LYS B  336  333    H    AlphaHelix    -55.02    -49.57      80.4      4UN3
+ASG  ALA B  337  334    H    AlphaHelix    -54.74    -48.52      37.4      4UN3
+ASG  LEU B  338  335    H    AlphaHelix    -57.36    -51.10      13.0      4UN3
+ASG  VAL B  339  336    H    AlphaHelix    -63.45    -34.72       0.0      4UN3
+ASG  ARG B  340  337    H    AlphaHelix    -58.77    -53.02     137.9      4UN3
+ASG  GLN B  341  338    H    AlphaHelix    -61.27    -47.34     144.2      4UN3
+ASG  GLN B  342  339    H    AlphaHelix   -108.49    -29.77      66.4      4UN3
+ASG  LEU B  343  340    C          Coil   -142.19     61.54      42.1      4UN3
+ASG  PRO B  344  341    G      310Helix    -65.61    -15.68      63.0      4UN3
+ASG  GLU B  345  342    G      310Helix    -68.92    -28.67     158.0      4UN3
+ASG  LYS B  346  343    G      310Helix    -97.64      3.22      81.0      4UN3
+ASG  TYR B  347  344    H    AlphaHelix    -64.70    -40.43      22.8      4UN3
+ASG  LYS B  348  345    H    AlphaHelix    -64.90    -37.63     159.1      4UN3
+ASG  GLU B  349  346    H    AlphaHelix    -70.90    -32.49      66.7      4UN3
+ASG  ILE B  350  347    H    AlphaHelix    -79.58    -47.27       1.4      4UN3
+ASG  PHE B  351  348    H    AlphaHelix   -106.48      5.01      24.5      4UN3
+ASG  PHE B  352  349    H    AlphaHelix   -129.37    -42.74     144.8      4UN3
+ASG  ASP B  353  350    T          Turn    -76.60    115.51      58.9      4UN3
+ASG  GLN B  354  351    T          Turn    -71.72    -15.89     109.6      4UN3
+ASG  SER B  355  352    T          Turn    -98.40      1.88      83.7      4UN3
+ASG  LYS B  356  353    T          Turn    -99.96    -16.68      90.1      4UN3
+ASG  ASN B  357  354    T          Turn     78.64     18.81      55.7      4UN3
+ASG  GLY B  358  355    C          Coil    -76.16   -158.06       0.0      4UN3
+ASG  TYR B  359  356    H    AlphaHelix    -70.24    -32.41      34.7      4UN3
+ASG  ALA B  360  357    H    AlphaHelix    -68.90    -43.92       4.5      4UN3
+ASG  GLY B  361  358    H    AlphaHelix    -65.82    -28.16       0.0      4UN3
+ASG  TYR B  362  359    H    AlphaHelix    -69.98    -50.48       4.5      4UN3
+ASG  ILE B  363  360    H    AlphaHelix    -81.26    -47.98      66.5      4UN3
+ASG  ASP B  364  361    H    AlphaHelix   -100.68    -24.43     109.9      4UN3
+ASG  GLY B  365  362    C          Coil    -99.09    178.93      19.6      4UN3
+ASG  GLY B  366  363    C          Coil    -88.78     45.95      88.5      4UN3
+ASG  ALA B  367  364    C          Coil   -100.08    136.14       8.4      4UN3
+ASG  SER B  368  365    C          Coil    -84.49    167.26      49.7      4UN3
+ASG  GLN B  369  366    H    AlphaHelix    -58.57    -37.91      14.5      4UN3
+ASG  GLU B  370  367    H    AlphaHelix    -67.01    -49.55     151.1      4UN3
+ASG  GLU B  371  368    H    AlphaHelix    -62.73    -41.03      88.4      4UN3
+ASG  PHE B  372  369    H    AlphaHelix    -64.11    -47.34       0.2      4UN3
+ASG  TYR B  373  370    H    AlphaHelix    -56.05    -51.45       9.2      4UN3
+ASG  LYS B  374  371    H    AlphaHelix    -57.55    -35.57     145.0      4UN3
+ASG  PHE B  375  372    H    AlphaHelix    -62.77    -47.70      41.4      4UN3
+ASG  ILE B  376  373    H    AlphaHelix    -93.77     -4.39       1.6      4UN3
+ASG  LYS B  377  374    H    AlphaHelix    -49.97    -56.58      88.0      4UN3
+ASG  PRO B  378  375    H    AlphaHelix    -64.34    -44.45      48.3      4UN3
+ASG  ILE B  379  376    H    AlphaHelix    -52.84    -48.67      11.3      4UN3
+ASG  LEU B  380  377    H    AlphaHelix    -57.86    -59.65       0.6      4UN3
+ASG  GLU B  381  378    H    AlphaHelix    -65.20    -29.78     106.5      4UN3
+ASG  LYS B  382  379    H    AlphaHelix    -70.15    -22.62     150.7      4UN3
+ASG  MET B  383  380    C          Coil    -92.70    168.71       5.4      4UN3
+ASG  ASP B  384  381    C          Coil   -124.01    360.00     127.4      4UN3
+ASG  THR B  386  382    H    AlphaHelix    360.00    -15.43      17.3      4UN3
+ASG  GLU B  387  383    H    AlphaHelix    -59.21    -33.07     118.0      4UN3
+ASG  GLU B  388  384    H    AlphaHelix    -84.57    -31.84     115.8      4UN3
+ASG  LEU B  389  385    H    AlphaHelix    -58.39    -37.34       3.6      4UN3
+ASG  LEU B  390  386    H    AlphaHelix    -64.65    -41.00      32.9      4UN3
+ASG  VAL B  391  387    H    AlphaHelix    -57.06    -47.16      67.8      4UN3
+ASG  LYS B  392  388    H    AlphaHelix    -60.80    -36.16      11.6      4UN3
+ASG  LEU B  393  389    H    AlphaHelix    -66.01    -47.17       8.6      4UN3
+ASG  ASN B  394  390    H    AlphaHelix    -65.34    -31.96     126.8      4UN3
+ASG  ARG B  395  391    H    AlphaHelix    -73.89     -5.92      80.8      4UN3
+ASG  GLU B  396  392    C          Coil     54.93     47.46      99.8      4UN3
+ASG  ASP B  397  393    T          Turn   -143.41     35.32       4.9      4UN3
+ASG  LEU B  398  394    T          Turn    -82.37    -72.57       4.0      4UN3
+ASG  LEU B  399  395    T          Turn   -128.89     66.70       1.4      4UN3
+ASG  ARG B  400  396    T          Turn    -78.07    140.24       2.4      4UN3
+ASG  LYS B  401  397    T          Turn    -86.66    177.04      71.6      4UN3
+ASG  GLN B  402  398    T          Turn    -96.23    -30.20      21.8      4UN3
+ASG  ARG B  403  399    T          Turn    -97.90     97.76     127.1      4UN3
+ASG  THR B  404  400    T          Turn   -127.27    171.59      28.2      4UN3
+ASG  PHE B  405  401    T          Turn    -69.25    -24.41     147.1      4UN3
+ASG  ASP B  406  402    T          Turn    -95.89     12.14      46.1      4UN3
+ASG  ASN B  407  403    T          Turn    -83.25      8.13      35.4      4UN3
+ASG  GLY B  408  404    T          Turn    -74.58     -9.01      60.6      4UN3
+ASG  SER B  409  405    T          Turn    -72.44    -27.41      72.8      4UN3
+ASG  ILE B  410  406    T          Turn    -64.52    113.47      11.2      4UN3
+ASG  PRO B  411  407    B        Bridge    -75.31    154.68       1.4      4UN3
+ASG  HIS B  412  408    H    AlphaHelix    -66.82    -18.55      18.4      4UN3
+ASG  GLN B  413  409    H    AlphaHelix    -62.97    -30.39       9.1      4UN3
+ASG  ILE B  414  410    H    AlphaHelix    -78.59    -42.64      11.6      4UN3
+ASG  HIS B  415  411    H    AlphaHelix    -61.68    -35.01      10.6      4UN3
+ASG  LEU B  416  412    H    AlphaHelix    -64.01    -39.11      31.9      4UN3
+ASG  GLY B  417  413    H    AlphaHelix    -61.48    -50.80      34.3      4UN3
+ASG  GLU B  418  414    H    AlphaHelix    -63.13    -41.52       3.8      4UN3
+ASG  LEU B  419  415    H    AlphaHelix    -57.19    -48.39       0.0      4UN3
+ASG  HIS B  420  416    H    AlphaHelix    -65.32    -40.11      37.5      4UN3
+ASG  ALA B  421  417    H    AlphaHelix    -59.56    -52.14       2.8      4UN3
+ASG  ILE B  422  418    H    AlphaHelix    -57.72    -41.50       0.0      4UN3
+ASG  LEU B  423  419    H    AlphaHelix    -63.51    -43.40       0.0      4UN3
+ASG  ARG B  424  420    H    AlphaHelix    -64.44    -39.92     113.8      4UN3
+ASG  ARG B  425  421    H    AlphaHelix    -61.63    -45.54      65.3      4UN3
+ASG  GLN B  426  422    H    AlphaHelix   -102.26      0.53       1.8      4UN3
+ASG  GLU B  427  423    H    AlphaHelix    -76.05    -15.60      25.7      4UN3
+ASG  ASP B  428  424    T          Turn    -71.46    -28.51     120.6      4UN3
+ASG  PHE B  429  425    T          Turn   -102.33    -29.71      82.9      4UN3
+ASG  TYR B  430  426    T          Turn   -119.16    112.00      22.4      4UN3
+ASG  PRO B  431  427    H    AlphaHelix    -60.12    -36.46      90.5      4UN3
+ASG  PHE B  432  428    H    AlphaHelix    -67.14    -27.53      25.7      4UN3
+ASG  LEU B  433  429    H    AlphaHelix    -68.77    -37.16       0.2      4UN3
+ASG  LYS B  434  430    H    AlphaHelix    -64.27    -51.32     109.4      4UN3
+ASG  ASP B  435  431    H    AlphaHelix    -65.09    -25.46     132.4      4UN3
+ASG  ASN B  436  432    H    AlphaHelix   -113.82     14.42      40.1      4UN3
+ASG  ARG B  437  433    H    AlphaHelix    -59.23    -46.27      68.5      4UN3
+ASG  GLU B  438  434    H    AlphaHelix    -64.85    -43.41     133.4      4UN3
+ASG  LYS B  439  435    H    AlphaHelix    -55.47    -53.16      81.6      4UN3
+ASG  ILE B  440  436    H    AlphaHelix    -58.16    -45.06       0.0      4UN3
+ASG  GLU B  441  437    H    AlphaHelix    -60.30    -36.90      26.7      4UN3
+ASG  LYS B  442  438    H    AlphaHelix    -73.62    -22.11      75.6      4UN3
+ASG  ILE B  443  439    H    AlphaHelix    -64.07    -46.99       1.7      4UN3
+ASG  LEU B  444  440    H    AlphaHelix    -70.67    -37.72       0.0      4UN3
+ASG  THR B  445  441    H    AlphaHelix    -72.28    -48.74      57.3      4UN3
+ASG  PHE B  446  442    C          Coil    -60.74    145.76      40.2      4UN3
+ASG  ARG B  447  443    C          Coil   -153.57    123.11     146.2      4UN3
+ASG  ILE B  448  444    C          Coil    -61.93    123.36      35.7      4UN3
+ASG  PRO B  449  445    T          Turn    -64.20    140.07      22.9      4UN3
+ASG  TYR B  450  446    T          Turn    -59.32    -27.97     125.0      4UN3
+ASG  TYR B  451  447    T          Turn    -81.63     -1.76      10.8      4UN3
+ASG  VAL B  452  448    T          Turn    -97.77    -45.44       0.0      4UN3
+ASG  GLY B  453  449    T          Turn     81.47   -170.03       9.8      4UN3
+ASG  PRO B  454  450    C          Coil    -52.20    135.65      14.6      4UN3
+ASG  LEU B  455  451    C          Coil    -83.99     60.51      51.2      4UN3
+ASG  ALA B  456  452    T          Turn    -83.09    173.84      25.9      4UN3
+ASG  ARG B  457  453    T          Turn   -141.57     62.14     181.8      4UN3
+ASG  GLY B  458  454    T          Turn     84.34     10.11      78.5      4UN3
+ASG  ASN B  459  455    T          Turn   -129.65     16.70     159.0      4UN3
+ASG  SER B  460  456    T          Turn   -116.72    116.36      36.0      4UN3
+ASG  ARG B  461  457    T          Turn    -58.45    -26.80     204.0      4UN3
+ASG  PHE B  462  458    T          Turn    -92.08    -18.02      52.2      4UN3
+ASG  ALA B  463  459    T          Turn    -85.97    154.20      23.4      4UN3
+ASG  TRP B  464  460    C          Coil   -141.29     -8.99      49.6      4UN3
+ASG  MET B  465  461    C          Coil    -63.03    149.22      24.1      4UN3
+ASG  THR B  466  462    C          Coil   -118.35    146.08      47.3      4UN3
+ASG  ARG B  467  463    B        Bridge   -100.27    121.71      59.4      4UN3
+ASG  LYS B  468  464    T          Turn    -70.13    -25.61     116.5      4UN3
+ASG  SER B  469  465    T          Turn   -150.38    171.20      51.9      4UN3
+ASG  GLU B  470  466    T          Turn   -100.42     28.81     143.7      4UN3
+ASG  GLU B  471  467    C          Coil    -78.72    162.80     109.9      4UN3
+ASG  THR B  472  468    C          Coil    -73.93    135.90     110.3      4UN3
+ASG  ILE B  473  469    C          Coil    -87.87    129.51      14.0      4UN3
+ASG  THR B  474  470    T          Turn   -125.26    168.79      28.1      4UN3
+ASG  PRO B  475  471    T          Turn    -64.16    -22.90      15.5      4UN3
+ASG  TRP B  476  472    T          Turn    -87.86    -27.58      40.0      4UN3
+ASG  ASN B  477  473    H    AlphaHelix   -109.39     12.73      27.1      4UN3
+ASG  PHE B  478  474    H    AlphaHelix    -58.70    -51.54       1.6      4UN3
+ASG  GLU B  479  475    H    AlphaHelix    -59.58    -33.19      98.7      4UN3
+ASG  GLU B  480  476    H    AlphaHelix    -84.93    -32.18     114.3      4UN3
+ASG  VAL B  481  477    H    AlphaHelix    -89.28    -40.56       3.4      4UN3
+ASG  VAL B  482  478    B        Bridge    -90.93    130.14       0.0      4UN3
+ASG  ASP B  483  479    C          Coil    -79.31     88.84      51.5      4UN3
+ASG  LYS B  484  480    H    AlphaHelix    -60.24    -42.04      25.2      4UN3
+ASG  GLY B  485  481    H    AlphaHelix    -61.10    -56.43      15.0      4UN3
+ASG  ALA B  486  482    H    AlphaHelix    -61.85    -25.86      27.3      4UN3
+ASG  SER B  487  483    H    AlphaHelix    -73.93    -43.90       0.0      4UN3
+ASG  ALA B  488  484    H    AlphaHelix    -63.93    -44.46       4.5      4UN3
+ASG  GLN B  489  485    H    AlphaHelix    -55.75    -46.48      58.9      4UN3
+ASG  SER B  490  486    H    AlphaHelix    -63.08    -41.30      43.2      4UN3
+ASG  PHE B  491  487    H    AlphaHelix    -53.11    -42.56      48.3      4UN3
+ASG  ILE B  492  488    H    AlphaHelix    -85.10    -40.39      35.5      4UN3
+ASG  GLU B  493  489    H    AlphaHelix    -72.89    -22.64      55.5      4UN3
+ASG  ARG B  494  490    H    AlphaHelix    -71.58    -14.73     122.2      4UN3
+ASG  MET B  495  491    C          Coil   -110.75    -25.12     121.1      4UN3
+ASG  THR B  496  492    C          Coil    -70.12    147.20      36.8      4UN3
+ASG  ASN B  497  493    C          Coil    -71.23    143.95      89.4      4UN3
+ASG  PHE B  498  494    B        Bridge    -90.38    155.55     104.3      4UN3
+ASG  ASP B  499  495    T          Turn    -60.68    126.01       1.0      4UN3
+ASG  LYS B  500  496    T          Turn    -68.21    -38.03     136.9      4UN3
+ASG  ASN B  501  497    T          Turn    -66.67    -36.83      45.3      4UN3
+ASG  LEU B  502  498    T          Turn   -124.89     77.51      24.5      4UN3
+ASG  PRO B  503  499    T          Turn    -50.18    -21.88      79.9      4UN3
+ASG  ASN B  504  500    T          Turn    -91.01      3.07     142.9      4UN3
+ASG  GLU B  505  501    T          Turn   -113.75    135.05      61.3      4UN3
+ASG  LYS B  506  502    B        Bridge    -70.05    146.03     112.1      4UN3
+ASG  VAL B  507  503    E        Strand    -77.36    139.32       9.6      4UN3
+ASG  LEU B  508  504    E        Strand    -66.71    153.42      16.9      4UN3
+ASG  PRO B  509  505    E        Strand    -58.06    143.65       4.2      4UN3
+ASG  LYS B  510  506    T          Turn    -62.03    -32.27     101.3      4UN3
+ASG  HIS B  511  507    T          Turn    -98.62     18.09      59.1      4UN3
+ASG  SER B  512  508    T          Turn    -60.67    136.84       0.2      4UN3
+ASG  LEU B  513  509    H    AlphaHelix    -59.40    -43.55       6.8      4UN3
+ASG  LEU B  514  510    H    AlphaHelix    -61.26    -43.14       4.0      4UN3
+ASG  TYR B  515  511    H    AlphaHelix    -64.94    -35.61      23.7      4UN3
+ASG  GLU B  516  512    H    AlphaHelix    -77.97    -30.62      20.8      4UN3
+ASG  TYR B  517  513    H    AlphaHelix    -62.42    -46.89      38.1      4UN3
+ASG  PHE B  518  514    H    AlphaHelix    -56.56    -44.15      12.0      4UN3
+ASG  THR B  519  515    H    AlphaHelix    -71.44    -44.17      51.4      4UN3
+ASG  VAL B  520  516    H    AlphaHelix    -61.49    -46.72       0.8      4UN3
+ASG  TYR B  521  517    H    AlphaHelix    -66.69    -39.78      14.6      4UN3
+ASG  ASN B  522  518    H    AlphaHelix    -62.43    -29.64      40.9      4UN3
+ASG  GLU B  523  519    H    AlphaHelix    -80.48    -45.21      34.6      4UN3
+ASG  LEU B  524  520    H    AlphaHelix    -59.75    -39.09       0.0      4UN3
+ASG  THR B  525  521    H    AlphaHelix    -55.06    -29.40       0.0      4UN3
+ASG  LYS B  526  522    C          Coil   -104.06     15.67      59.2      4UN3
+ASG  VAL B  527  523    C          Coil    -85.30    127.41       0.8      4UN3
+ASG  LYS B  528  524    E        Strand   -112.76    159.59      66.1      4UN3
+ASG  TYR B  529  525    E        Strand   -147.40    148.99      26.1      4UN3
+ASG  VAL B  530  526    E        Strand   -133.38    145.70      42.3      4UN3
+ASG  THR B  531  527    T          Turn   -122.52   -178.21      25.5      4UN3
+ASG  GLU B  532  528    T          Turn    -63.97    -43.50     198.3      4UN3
+ASG  GLY B  533  529    T          Turn    -66.03    -58.01      68.4      4UN3
+ASG  MET B  534  530    T          Turn    -57.63    157.50      54.1      4UN3
+ASG  ARG B  535  531    C          Coil   -100.87    -15.85     246.8      4UN3
+ASG  LYS B  536  532    C          Coil   -147.82    154.56     154.6      4UN3
+ASG  PRO B  537  533    C          Coil    -66.01    139.47      52.7      4UN3
+ASG  ALA B  538  534    E        Strand   -115.87    150.70      30.9      4UN3
+ASG  PHE B  539  535    E        Strand    -67.78    164.44      55.4      4UN3
+ASG  LEU B  540  536    C          Coil    -81.62    143.71       1.4      4UN3
+ASG  SER B  541  537    C          Coil    -91.15    175.58      48.0      4UN3
+ASG  GLY B  542  538    H    AlphaHelix    -56.27    -50.99       8.1      4UN3
+ASG  GLU B  543  539    H    AlphaHelix    -56.33    -49.54     145.7      4UN3
+ASG  GLN B  544  540    H    AlphaHelix    -60.68    -39.21      21.6      4UN3
+ASG  LYS B  545  541    H    AlphaHelix    -66.91    -46.32       0.0      4UN3
+ASG  LYS B  546  542    H    AlphaHelix    -60.79    -35.67      96.0      4UN3
+ASG  ALA B  547  543    H    AlphaHelix    -61.84    -53.35      23.9      4UN3
+ASG  ILE B  548  544    H    AlphaHelix    -60.99    -39.80       0.0      4UN3
+ASG  VAL B  549  545    H    AlphaHelix    -66.02    -57.45       1.0      4UN3
+ASG  ASP B  550  546    H    AlphaHelix    -60.07    -36.54      83.4      4UN3
+ASG  LEU B  551  547    H    AlphaHelix    -88.01    -39.67      77.4      4UN3
+ASG  LEU B  552  548    H    AlphaHelix   -105.57    -51.19       3.0      4UN3
+ASG  PHE B  553  549    T          Turn    -69.33    -33.59       1.2      4UN3
+ASG  LYS B  554  550    T          Turn    -91.98     11.25      19.2      4UN3
+ASG  THR B  555  551    T          Turn   -130.09    -29.11      75.0      4UN3
+ASG  ASN B  556  552    T          Turn   -116.51    130.61      45.7      4UN3
+ASG  ARG B  557  553    T          Turn    -52.01    -55.90      87.7      4UN3
+ASG  LYS B  558  554    T          Turn   -112.78    149.94      86.0      4UN3
+ASG  VAL B  559  555    E        Strand   -119.24    113.20       0.4      4UN3
+ASG  THR B  560  556    E        Strand    -87.25    163.27      40.1      4UN3
+ASG  VAL B  561  557    H    AlphaHelix    -63.88    -39.69      15.0      4UN3
+ASG  LYS B  562  558    H    AlphaHelix    -58.16    -41.56     147.7      4UN3
+ASG  GLN B  563  559    H    AlphaHelix    -66.50    -35.34      45.7      4UN3
+ASG  LEU B  564  560    H    AlphaHelix    -60.77    -56.11       0.2      4UN3
+ASG  LYS B  565  561    H    AlphaHelix    -53.79    -66.08      71.7      4UN3
+ASG  GLU B  566  562    H    AlphaHelix    -66.46    -53.14     110.1      4UN3
+ASG  ASP B  567  563    H    AlphaHelix    -78.48    -25.05      50.5      4UN3
+ASG  TYR B  568  564    H    AlphaHelix   -107.60    -61.79       6.0      4UN3
+ASG  PHE B  569  565    H    AlphaHelix    -63.72    -38.93       1.2      4UN3
+ASG  LYS B  570  566    H    AlphaHelix    -74.85    -50.02      88.4      4UN3
+ASG  LYS B  571  567    H    AlphaHelix    -73.81    -33.97     155.3      4UN3
+ASG  ILE B  572  568    H    AlphaHelix   -106.43    -22.29      89.4      4UN3
+ASG  GLU B  573  569    H    AlphaHelix   -120.32      2.82      51.9      4UN3
+ASG  CYS B  574  570    C          Coil     55.37     37.00     101.9      4UN3
+ASG  PHE B  575  571    T          Turn    -95.73    120.11      60.1      4UN3
+ASG  ASP B  576  572    T          Turn    -75.32    -24.16     132.5      4UN3
+ASG  SER B  577  573    T          Turn   -155.85    144.77      99.9      4UN3
+ASG  VAL B  578  574    T          Turn   -153.82    153.36       9.5      4UN3
+ASG  GLU B  579  575    E        Strand   -110.27    133.22     125.8      4UN3
+ASG  ILE B  580  576    E        Strand   -111.29    138.26      28.7      4UN3
+ASG  SER B  581  577    T          Turn   -115.16    -19.72      79.5      4UN3
+ASG  GLY B  582  578    T          Turn   -104.80     -6.96      38.8      4UN3
+ASG  VAL B  583  579    T          Turn   -135.83    155.04      22.2      4UN3
+ASG  GLU B  584  580    T          Turn   -125.20    113.88     170.1      4UN3
+ASG  ASP B  585  581    T          Turn     67.60    -60.12     119.2      4UN3
+ASG  ARG B  586  582    E        Strand   -159.73    151.90     102.2      4UN3
+ASG  PHE B  587  583    E        Strand    -62.51    126.71       0.2      4UN3
+ASG  ASN B  588  584    C          Coil    -62.93    -41.91     141.5      4UN3
+ASG  ALA B  589  585    C          Coil    -77.04    152.95       7.6      4UN3
+ASG  SER B  590  586    C          Coil   -157.68    154.04      22.6      4UN3
+ASG  LEU B  591  587    C          Coil    -96.53     62.31       0.2      4UN3
+ASG  GLY B  592  588    H    AlphaHelix    -64.06    -41.31      13.2      4UN3
+ASG  THR B  593  589    H    AlphaHelix    -64.58    -38.31       0.6      4UN3
+ASG  TYR B  594  590    H    AlphaHelix    -54.52    -42.85       0.0      4UN3
+ASG  HIS B  595  591    H    AlphaHelix    -79.85    -34.61      12.0      4UN3
+ASG  ASP B  596  592    H    AlphaHelix    -55.42    -58.55      24.4      4UN3
+ASG  LEU B  597  593    H    AlphaHelix    -54.10    -53.77       2.6      4UN3
+ASG  LEU B  598  594    H    AlphaHelix    -44.66    -39.21      43.2      4UN3
+ASG  LYS B  599  595    H    AlphaHelix    -71.45    -32.21     110.9      4UN3
+ASG  ILE B  600  596    H    AlphaHelix    -81.39    -59.11      14.2      4UN3
+ASG  ILE B  601  597    H    AlphaHelix    -73.35    -25.17      16.0      4UN3
+ASG  LYS B  602  598    C          Coil     65.04     14.89     141.8      4UN3
+ASG  ASP B  603  599    C          Coil   -129.44     90.32      77.0      4UN3
+ASG  LYS B  604  600    H    AlphaHelix    -57.92    -41.20      78.7      4UN3
+ASG  ASP B  605  601    H    AlphaHelix    -65.81    -25.42     119.7      4UN3
+ASG  PHE B  606  602    H    AlphaHelix    -68.40    -42.29      24.1      4UN3
+ASG  LEU B  607  603    H    AlphaHelix    -68.01    -42.25      10.3      4UN3
+ASG  ASP B  608  604    H    AlphaHelix    -71.02    -20.71      56.7      4UN3
+ASG  ASN B  609  605    C          Coil    -68.63    124.07      74.1      4UN3
+ASG  GLU B  610  606    G      310Helix    -64.70    -27.13     139.7      4UN3
+ASG  GLU B  611  607    G      310Helix    -72.12    -17.66     165.0      4UN3
+ASG  ASN B  612  608    G      310Helix    -93.05      4.98      22.8      4UN3
+ASG  GLU B  613  609    H    AlphaHelix    -60.10    -50.68      43.2      4UN3
+ASG  ASP B  614  610    H    AlphaHelix    -58.95    -47.14     103.4      4UN3
+ASG  ILE B  615  611    H    AlphaHelix    -57.94    -47.29      37.7      4UN3
+ASG  LEU B  616  612    H    AlphaHelix    -64.99    -43.07       7.4      4UN3
+ASG  GLU B  617  613    H    AlphaHelix    -61.03    -37.92      11.7      4UN3
+ASG  ASP B  618  614    H    AlphaHelix    -68.13    -37.42      48.4      4UN3
+ASG  ILE B  619  615    H    AlphaHelix    -66.94    -46.29       2.2      4UN3
+ASG  VAL B  620  616    H    AlphaHelix    -66.41    -37.61       0.2      4UN3
+ASG  LEU B  621  617    H    AlphaHelix    -58.21    -50.00      59.3      4UN3
+ASG  THR B  622  618    H    AlphaHelix    -57.96    -42.84       1.4      4UN3
+ASG  LEU B  623  619    H    AlphaHelix    -64.64    -30.11       0.2      4UN3
+ASG  THR B  624  620    H    AlphaHelix    -84.29    -47.82       6.6      4UN3
+ASG  LEU B  625  621    H    AlphaHelix    -62.63    -35.65       5.4      4UN3
+ASG  PHE B  626  622    C          Coil   -119.59    156.05       6.3      4UN3
+ASG  GLU B  627  623    C          Coil   -132.48     -7.46      83.5      4UN3
+ASG  ASP B  628  624    C          Coil    -73.49    106.02      19.2      4UN3
+ASG  ARG B  629  625    H    AlphaHelix    -55.02    -36.36      46.0      4UN3
+ASG  GLU B  630  626    H    AlphaHelix    -64.26    -29.45     125.1      4UN3
+ASG  MET B  631  627    H    AlphaHelix    -86.82    -36.35      17.0      4UN3
+ASG  ILE B  632  628    H    AlphaHelix    -56.56    -44.06       0.0      4UN3
+ASG  GLU B  633  629    H    AlphaHelix    -58.69    -46.26     101.3      4UN3
+ASG  GLU B  634  630    H    AlphaHelix    -61.56    -37.35     111.3      4UN3
+ASG  ARG B  635  631    H    AlphaHelix    -66.99    -32.74      75.6      4UN3
+ASG  LEU B  636  632    H    AlphaHelix    -90.36     -4.39       1.0      4UN3
+ASG  LYS B  637  633    G      310Helix    -55.66    -32.14     130.5      4UN3
+ASG  THR B  638  634    G      310Helix    -60.66    -38.39      98.0      4UN3
+ASG  TYR B  639  635    G      310Helix    -91.79     11.21      36.7      4UN3
+ASG  ALA B  640  636    T          Turn    -60.42    -24.81      50.9      4UN3
+ASG  HIS B  641  637    T          Turn    -79.26    -17.32     147.1      4UN3
+ASG  LEU B  642  638    T          Turn    -76.99    -35.13      61.9      4UN3
+ASG  PHE B  643  639    T          Turn   -135.47    168.55      26.6      4UN3
+ASG  ASP B  644  640    C          Coil    -65.09    164.98     127.7      4UN3
+ASG  ASP B  645  641    H    AlphaHelix    -64.37    -36.21     137.4      4UN3
+ASG  LYS B  646  642    H    AlphaHelix    -63.47    -41.13     122.0      4UN3
+ASG  VAL B  647  643    H    AlphaHelix    -63.11    -41.35      10.6      4UN3
+ASG  MET B  648  644    H    AlphaHelix    -63.49    -45.51      21.2      4UN3
+ASG  LYS B  649  645    H    AlphaHelix    -53.92    -41.89     136.6      4UN3
+ASG  GLN B  650  646    H    AlphaHelix    -72.96    -33.31      37.4      4UN3
+ASG  LEU B  651  647    H    AlphaHelix    -71.75    -29.79       1.8      4UN3
+ASG  LYS B  652  648    H    AlphaHelix    -56.77    -46.02      41.7      4UN3
+ASG  ARG B  653  649    H    AlphaHelix    -70.46    -33.45      49.5      4UN3
+ASG  ARG B  654  650    C          Coil    -59.56    118.74      76.0      4UN3
+ASG  ARG B  655  651    C          Coil   -133.65    139.95      50.3      4UN3
+ASG  TYR B  656  652    C          Coil   -124.42    151.21       7.9      4UN3
+ASG  THR B  657  653    C          Coil   -131.75    152.86     114.9      4UN3
+ASG  GLY B  658  654    C          Coil    102.57    152.99      33.2      4UN3
+ASG  TRP B  659  655    E        Strand   -132.01    146.22      61.3      4UN3
+ASG  GLY B  660  656    E        Strand    -72.09   -144.52       5.2      4UN3
+ASG  ARG B  661  657    E        Strand   -124.72    -19.54     137.0      4UN3
+ASG  LEU B  662  658    E        Strand   -125.52    163.13      15.2      4UN3
+ASG  SER B  663  659    E        Strand    -97.47    163.04       0.6      4UN3
+ASG  ARG B  664  660    H    AlphaHelix    -64.23    -37.36      68.5      4UN3
+ASG  LYS B  665  661    H    AlphaHelix    -66.95    -35.22      86.6      4UN3
+ASG  LEU B  666  662    H    AlphaHelix    -66.92    -49.17       0.4      4UN3
+ASG  ILE B  667  663    H    AlphaHelix    -68.21    -47.82       0.0      4UN3
+ASG  ASN B  668  664    H    AlphaHelix   -140.14     19.69      34.8      4UN3
+ASG  GLY B  669  665    H    AlphaHelix   -110.12    -53.81      36.9      4UN3
+ASG  ILE B  670  666    C          Coil    -66.88    138.43      23.1      4UN3
+ASG  ARG B  671  667    E        Strand   -120.84    131.65     141.3      4UN3
+ASG  ASP B  672  668    E        Strand    -63.97    128.25       2.5      4UN3
+ASG  LYS B  673  669    T          Turn    -53.88    -43.65     169.3      4UN3
+ASG  GLN B  674  670    T          Turn    -73.16    -47.61     169.6      4UN3
+ASG  SER B  675  671    T          Turn    -79.22    -41.10      47.0      4UN3
+ASG  GLY B  676  672    T          Turn     73.43     19.01      36.4      4UN3
+ASG  LYS B  677  673    E        Strand   -112.55    139.62      64.3      4UN3
+ASG  THR B  678  674    E        Strand    -82.54    172.94       0.0      4UN3
+ASG  ILE B  679  675    H    AlphaHelix    -54.98    -47.44       0.0      4UN3
+ASG  LEU B  680  676    H    AlphaHelix    -61.72    -31.79       6.0      4UN3
+ASG  ASP B  681  677    H    AlphaHelix    -64.59    -41.58      41.5      4UN3
+ASG  PHE B  682  678    H    AlphaHelix    -70.07    -30.26       2.6      4UN3
+ASG  LEU B  683  679    H    AlphaHelix    -69.99    -39.14       0.0      4UN3
+ASG  LYS B  684  680    H    AlphaHelix    -70.08    -47.22      59.7      4UN3
+ASG  SER B  685  681    C          Coil   -150.13    123.75      46.7      4UN3
+ASG  ASP B  686  682    T          Turn   -137.71     19.16      21.7      4UN3
+ASG  GLY B  687  683    T          Turn     73.22   -116.70      48.9      4UN3
+ASG  PHE B  688  684    T          Turn    -82.58    -49.72     204.2      4UN3
+ASG  ALA B  689  685    T          Turn    -81.79    115.09      50.4      4UN3
+ASG  ASN B  690  686    T          Turn    -91.50     80.05       0.8      4UN3
+ASG  ARG B  691  687    C          Coil    -73.56    142.22      44.3      4UN3
+ASG  ASN B  692  688    C          Coil    -77.01    161.41      47.5      4UN3
+ASG  PHE B  693  689    H    AlphaHelix    -59.22    -41.64      21.2      4UN3
+ASG  MET B  694  690    H    AlphaHelix    -61.07    -43.36      99.4      4UN3
+ASG  GLN B  695  691    H    AlphaHelix    -66.05    -48.05      84.1      4UN3
+ASG  LEU B  696  692    H    AlphaHelix    -53.25    -42.67       0.0      4UN3
+ASG  ILE B  697  693    H    AlphaHelix    -73.14    -19.25       5.7      4UN3
+ASG  HIS B  698  694    C          Coil   -120.11     13.70     110.4      4UN3
+ASG  ASP B  699  695    T          Turn    -88.12    111.91      41.8      4UN3
+ASG  ASP B  700  696    T          Turn    -60.24    -29.21     131.3      4UN3
+ASG  SER B  701  697    T          Turn    -68.79    -36.62      91.1      4UN3
+ASG  LEU B  702  698    T          Turn    -85.08    164.90      13.4      4UN3
+ASG  THR B  703  699    H    AlphaHelix   -103.96      4.76      13.8      4UN3
+ASG  PHE B  704  700    H    AlphaHelix    -61.14    -48.96       1.0      4UN3
+ASG  LYS B  705  701    H    AlphaHelix    -58.04    -46.77      54.5      4UN3
+ASG  GLU B  706  702    H    AlphaHelix    -68.02    -38.39      92.8      4UN3
+ASG  ASP B  707  703    H    AlphaHelix    -62.82    -30.80      55.7      4UN3
+ASG  ILE B  708  704    H    AlphaHelix    -74.58    -41.50      26.1      4UN3
+ASG  GLN B  709  705    H    AlphaHelix    -58.80     -5.65     146.2      4UN3
+ASG  LYS B  710  706    C          Coil    -58.79    360.00     186.3      4UN3
+ASG  SER B  719  707    C          Coil    360.00    134.36      91.5      4UN3
+ASG  LEU B  720  708    H    AlphaHelix    -59.81    -43.18      29.9      4UN3
+ASG  HIS B  721  709    H    AlphaHelix    -68.81    -46.46     102.8      4UN3
+ASG  GLU B  722  710    H    AlphaHelix    -60.44    -44.99     132.5      4UN3
+ASG  HIS B  723  711    H    AlphaHelix    -59.42    -41.54      76.2      4UN3
+ASG  ILE B  724  712    H    AlphaHelix    -71.37    -40.89       7.2      4UN3
+ASG  ALA B  725  713    H    AlphaHelix    -68.02    -24.58      65.6      4UN3
+ASG  ASN B  726  714    H    AlphaHelix    -80.27    -15.87     139.3      4UN3
+ASG  LEU B  727  715    C          Coil    -64.10    159.38      14.6      4UN3
+ASG  ALA B  728  716    C          Coil    -95.72    128.69      87.2      4UN3
+ASG  GLY B  729  717    C          Coil    154.57    179.62      46.5      4UN3
+ASG  SER B  730  718    C          Coil    -68.63    139.89      58.9      4UN3
+ASG  PRO B  731  719    H    AlphaHelix    -59.79    -28.93      45.3      4UN3
+ASG  ALA B  732  720    H    AlphaHelix    -58.90    -46.53      15.8      4UN3
+ASG  ILE B  733  721    H    AlphaHelix    -72.75    -29.51      14.6      4UN3
+ASG  LYS B  734  722    H    AlphaHelix    -65.75    -40.35      37.0      4UN3
+ASG  LYS B  735  723    H    AlphaHelix    -51.49    -49.09      38.6      4UN3
+ASG  GLY B  736  724    H    AlphaHelix    -60.51    -37.77       0.0      4UN3
+ASG  ILE B  737  725    H    AlphaHelix    -63.62    -48.70       0.2      4UN3
+ASG  LEU B  738  726    H    AlphaHelix    -58.82    -47.42      28.5      4UN3
+ASG  GLN B  739  727    H    AlphaHelix    -59.37    -42.37       9.0      4UN3
+ASG  THR B  740  728    H    AlphaHelix    -68.33    -37.05       0.0      4UN3
+ASG  VAL B  741  729    H    AlphaHelix    -59.96    -47.96       0.8      4UN3
+ASG  LYS B  742  730    H    AlphaHelix    -60.71    -42.28      86.2      4UN3
+ASG  VAL B  743  731    H    AlphaHelix    -55.82    -49.42       0.0      4UN3
+ASG  VAL B  744  732    H    AlphaHelix    -55.56    -47.61       1.2      4UN3
+ASG  ASP B  745  733    H    AlphaHelix    -54.47    -51.08      61.3      4UN3
+ASG  GLU B  746  734    H    AlphaHelix    -64.10    -33.69      37.9      4UN3
+ASG  LEU B  747  735    H    AlphaHelix    -65.12    -43.76       0.7      4UN3
+ASG  VAL B  748  736    H    AlphaHelix    -60.59    -42.92      22.4      4UN3
+ASG  LYS B  749  737    H    AlphaHelix    -59.94    -40.94     100.7      4UN3
+ASG  VAL B  750  738    H    AlphaHelix    -60.61    -38.92      11.5      4UN3
+ASG  MET B  751  739    H    AlphaHelix    -86.54     31.48      24.7      4UN3
+ASG  GLY B  752  740    T          Turn     66.43     29.58      48.4      4UN3
+ASG  ARG B  753  741    T          Turn     63.17     16.92     173.3      4UN3
+ASG  HIS B  754  742    T          Turn    -83.14    135.26     104.2      4UN3
+ASG  LYS B  755  743    C          Coil    -80.03    145.68      67.5      4UN3
+ASG  PRO B  756  744    T          Turn    -64.54    158.46       2.6      4UN3
+ASG  GLU B  757  745    T          Turn    -78.16    -39.71      91.3      4UN3
+ASG  ASN B  758  746    E        Strand   -139.69    145.55       6.8      4UN3
+ASG  ILE B  759  747    E        Strand   -121.07    111.28       0.0      4UN3
+ASG  VAL B  760  748    E        Strand    -98.83    118.81       0.0      4UN3
+ASG  ILE B  761  749    E        Strand   -115.96    137.76       4.5      4UN3
+ASG  GLU B  762  750    E        Strand   -122.47    148.40      13.4      4UN3
+ASG  MET B  763  751    E        Strand   -131.17    138.08      11.1      4UN3
+ASG  ALA B  764  752    C          Coil    -71.80    155.85      40.3      4UN3
+ASG  ARG B  765  753    C          Coil    -61.52    360.00     203.4      4UN3
+ASG  ASN B  776  754    H    AlphaHelix    360.00    -62.92     148.2      4UN3
+ASG  SER B  777  755    H    AlphaHelix    -57.89    -44.65      20.2      4UN3
+ASG  ARG B  778  756    H    AlphaHelix    -59.57    -48.02     190.2      4UN3
+ASG  GLU B  779  757    H    AlphaHelix    -56.98    -40.79     142.8      4UN3
+ASG  ARG B  780  758    H    AlphaHelix    -64.65    -49.78      55.1      4UN3
+ASG  MET B  781  759    H    AlphaHelix    -57.93    -39.61      19.2      4UN3
+ASG  LYS B  782  760    H    AlphaHelix    -63.55    -54.18     109.8      4UN3
+ASG  ARG B  783  761    H    AlphaHelix    -46.56    -53.10      88.9      4UN3
+ASG  ILE B  784  762    H    AlphaHelix    -63.27    -49.36       0.2      4UN3
+ASG  GLU B  785  763    H    AlphaHelix    -52.80    -48.94      86.0      4UN3
+ASG  GLU B  786  764    H    AlphaHelix    -66.94    -50.02     122.6      4UN3
+ASG  GLY B  787  765    H    AlphaHelix    -57.56    -36.77       0.9      4UN3
+ASG  ILE B  788  766    H    AlphaHelix    -77.02    -47.67       2.8      4UN3
+ASG  LYS B  789  767    H    AlphaHelix    -53.52    -44.34     161.7      4UN3
+ASG  GLU B  790  768    H    AlphaHelix    -63.80    -42.27     103.7      4UN3
+ASG  LEU B  791  769    H    AlphaHelix    -69.07    -24.95      46.2      4UN3
+ASG  GLY B  792  770    C          Coil     79.97     23.68      54.1      4UN3
+ASG  SER B  793  771    C          Coil    -86.02    148.73      30.6      4UN3
+ASG  GLN B  794  772    H    AlphaHelix    -94.64     -3.96     141.0      4UN3
+ASG  ILE B  795  773    H    AlphaHelix    -54.62    -25.65      14.0      4UN3
+ASG  LEU B  796  774    H    AlphaHelix    -71.65    -41.17      36.7      4UN3
+ASG  LYS B  797  775    H    AlphaHelix    -67.88    -36.43      89.5      4UN3
+ASG  GLU B  798  776    H    AlphaHelix    -78.26    -40.46     132.7      4UN3
+ASG  HIS B  799  777    C          Coil   -127.76     90.04      38.0      4UN3
+ASG  PRO B  800  778    C          Coil    -66.28    136.83     103.0      4UN3
+ASG  VAL B  801  779    C          Coil   -120.79    165.00      20.3      4UN3
+ASG  GLU B  802  780    C          Coil   -128.56    153.34     128.9      4UN3
+ASG  ASN B  803  781    G      310Helix    -51.17    -39.45      60.2      4UN3
+ASG  THR B  804  782    G      310Helix    -76.20    -11.85      97.5      4UN3
+ASG  GLN B  805  783    G      310Helix    -79.45    -29.15      94.2      4UN3
+ASG  LEU B  806  784    T          Turn    -73.32     -6.74       0.0      4UN3
+ASG  GLN B  807  785    T          Turn    -66.27    -28.49     104.2      4UN3
+ASG  ASN B  808  786    T          Turn    -67.76    125.04      93.5      4UN3
+ASG  GLU B  809  787    H    AlphaHelix    -63.22    -47.07      62.7      4UN3
+ASG  LYS B  810  788    H    AlphaHelix    -64.19    -35.98      53.7      4UN3
+ASG  LEU B  811  789    H    AlphaHelix    -70.80    -45.91      21.0      4UN3
+ASG  TYR B  812  790    H    AlphaHelix    -56.16    -51.31       5.4      4UN3
+ASG  LEU B  813  791    H    AlphaHelix    -53.92    -55.07       0.0      4UN3
+ASG  TYR B  814  792    H    AlphaHelix    -43.87    -47.53       6.2      4UN3
+ASG  TYR B  815  793    H    AlphaHelix    -72.91    -31.71       7.4      4UN3
+ASG  LEU B  816  794    H    AlphaHelix    -67.90    -19.23       0.5      4UN3
+ASG  GLN B  817  795    H    AlphaHelix   -109.04     17.86       0.6      4UN3
+ASG  ASN B  818  796    T          Turn     54.87     41.35      38.8      4UN3
+ASG  GLY B  819  797    T          Turn     58.89     42.84       1.9      4UN3
+ASG  ARG B  820  798    E        Strand   -136.49    156.17      74.2      4UN3
+ASG  ASP B  821  799    E        Strand    -76.36    137.80       0.0      4UN3
+ASG  MET B  822  800    T          Turn    -81.52    -21.39       0.0      4UN3
+ASG  TYR B  823  801    T          Turn   -109.84    -18.59       7.4      4UN3
+ASG  VAL B  824  802    T          Turn   -121.64     -6.39      48.1      4UN3
+ASG  ASP B  825  803    T          Turn     62.98     41.56      91.5      4UN3
+ASG  GLN B  826  804    E        Strand   -134.68    160.76      62.1      4UN3
+ASG  GLU B  827  805    E        Strand    -75.06    149.74     145.5      4UN3
+ASG  LEU B  828  806    C          Coil   -104.83    168.63      10.9      4UN3
+ASG  ASP B  829  807    T          Turn   -115.31    128.89      65.1      4UN3
+ASG  ILE B  830  808    T          Turn    -70.50     -1.38      42.9      4UN3
+ASG  ASN B  831  809    T          Turn   -112.66      3.64     128.6      4UN3
+ASG  ARG B  832  810    T          Turn   -125.74     19.48     117.3      4UN3
+ASG  LEU B  833  811    G      310Helix    -62.08    -30.60      27.2      4UN3
+ASG  SER B  834  812    G      310Helix    -62.45    -28.87     100.2      4UN3
+ASG  ASP B  835  813    G      310Helix    -81.64    -19.93      91.3      4UN3
+ASG  TYR B  836  814    C          Coil    -83.83    167.65      16.1      4UN3
+ASG  ASP B  837  815    E        Strand   -121.31    143.04      49.4      4UN3
+ASG  VAL B  838  816    E        Strand    -99.63    109.56      42.1      4UN3
+ASG  ASP B  839  817    E        Strand   -105.69    141.68      23.3      4UN3
+ASG  ALA B  840  818    E        Strand    -82.88    125.73      11.6      4UN3
+ASG  ILE B  841  819    T          Turn    -59.26    -60.47       0.2      4UN3
+ASG  VAL B  842  820    T          Turn    -94.95    116.87       2.8      4UN3
+ASG  PRO B  843  821    T          Turn    -44.52    141.16      12.0      4UN3
+ASG  GLN B  844  822    T          Turn    -58.27    -28.59     114.3      4UN3
+ASG  SER B  845  823    T          Turn    -61.03    -29.45      76.0      4UN3
+ASG  PHE B  846  824    T          Turn    -94.32    -45.37       5.9      4UN3
+ASG  LEU B  847  825    T          Turn   -123.06    115.52      39.3      4UN3
+ASG  LYS B  848  826    T          Turn    -78.32     64.96     102.6      4UN3
+ASG  ASP B  849  827    C          Coil   -109.66    120.63      20.3      4UN3
+ASG  ASP B  850  828    C          Coil   -104.66     -3.72     112.2      4UN3
+ASG  SER B  851  829    C          Coil    -75.78    177.44      48.5      4UN3
+ASG  ILE B  852  830    G      310Helix    -72.99    -26.02      24.1      4UN3
+ASG  ASP B  853  831    G      310Helix    -60.32    -21.96      45.1      4UN3
+ASG  ASN B  854  832    G      310Helix   -120.72      9.43       0.0      4UN3
+ASG  LYS B  855  833    E        Strand   -118.70    150.97      33.1      4UN3
+ASG  VAL B  856  834    E        Strand   -148.39    142.79       0.0      4UN3
+ASG  LEU B  857  835    E        Strand   -102.35    118.29       0.0      4UN3
+ASG  THR B  858  836    E        Strand   -135.75    158.07       0.0      4UN3
+ASG  ARG B  859  837    T          Turn    -67.63    -32.58     118.0      4UN3
+ASG  SER B  860  838    T          Turn   -148.51    133.68      26.7      4UN3
+ASG  ASP B  861  839    G      310Helix    -68.59    -11.25      68.9      4UN3
+ASG  LYS B  862  840    G      310Helix    -68.88    -29.56     162.8      4UN3
+ASG  ASN B  863  841    G      310Helix    -75.85      1.37      65.9      4UN3
+ASG  ARG B  864  842    G      310Helix    -73.97    -22.68      10.8      4UN3
+ASG  GLY B  865  843    C          Coil    106.66   -129.49      30.4      4UN3
+ASG  LYS B  866  844    T          Turn    -75.36    153.63     152.0      4UN3
+ASG  SER B  867  845    T          Turn    -83.70    -28.57      98.9      4UN3
+ASG  ASP B  868  846    T          Turn    -90.99     18.29     117.7      4UN3
+ASG  ASN B  869  847    T          Turn   -160.20    178.42      39.1      4UN3
+ASG  VAL B  870  848    C          Coil    -54.63    146.59       4.9      4UN3
+ASG  PRO B  871  849    C          Coil    -42.16    139.53       0.0      4UN3
+ASG  SER B  872  850    C          Coil    -68.35    168.90      28.1      4UN3
+ASG  GLU B  873  851    H    AlphaHelix    -62.49    -31.84     111.3      4UN3
+ASG  GLU B  874  852    H    AlphaHelix    -61.80    -47.49     125.1      4UN3
+ASG  VAL B  875  853    H    AlphaHelix    -64.03    -41.87      10.5      4UN3
+ASG  VAL B  876  854    H    AlphaHelix    -59.04    -54.50       2.0      4UN3
+ASG  LYS B  877  855    H    AlphaHelix    -52.89    -47.39     153.5      4UN3
+ASG  LYS B  878  856    H    AlphaHelix    -76.74    -29.57     141.8      4UN3
+ASG  MET B  879  857    H    AlphaHelix   -112.10     -7.77       0.8      4UN3
+ASG  LYS B  880  858    H    AlphaHelix    -50.23    -52.30      72.5      4UN3
+ASG  ASN B  881  859    H    AlphaHelix    -61.69    -37.28     116.8      4UN3
+ASG  TYR B  882  860    H    AlphaHelix    -62.61    -43.88      20.8      4UN3
+ASG  TRP B  883  861    H    AlphaHelix    -61.51    -35.76       0.0      4UN3
+ASG  ARG B  884  862    H    AlphaHelix    -59.57    -47.33     100.6      4UN3
+ASG  GLN B  885  863    H    AlphaHelix    -61.46    -40.08      92.6      4UN3
+ASG  LEU B  886  864    H    AlphaHelix    -67.44    -33.46       0.4      4UN3
+ASG  LEU B  887  865    H    AlphaHelix    -68.69    -48.42      28.9      4UN3
+ASG  ASN B  888  866    H    AlphaHelix    -64.15    -29.66     101.9      4UN3
+ASG  ALA B  889  867    H    AlphaHelix    -86.82      5.62       4.1      4UN3
+ASG  LYS B  890  868    T          Turn     60.86     22.05     157.0      4UN3
+ASG  LEU B  891  869    T          Turn    -84.29    -19.67       0.6      4UN3
+ASG  ILE B  892  870    T          Turn   -130.79    146.49       2.8      4UN3
+ASG  THR B  893  871    T          Turn    -80.04    176.82      56.8      4UN3
+ASG  GLN B  894  872    H    AlphaHelix    -71.04    -38.51     105.3      4UN3
+ASG  ARG B  895  873    H    AlphaHelix    -58.81    -50.62      96.0      4UN3
+ASG  LYS B  896  874    H    AlphaHelix    -57.19    -44.91       1.6      4UN3
+ASG  PHE B  897  875    H    AlphaHelix    -59.28    -52.20       7.6      4UN3
+ASG  ASP B  898  876    H    AlphaHelix    -64.16    -31.40      57.6      4UN3
+ASG  ASN B  899  877    H    AlphaHelix    -71.29    -36.67      36.4      4UN3
+ASG  LEU B  900  878    H    AlphaHelix    -64.38    -35.71       0.0      4UN3
+ASG  THR B  901  879    H    AlphaHelix    -98.28      9.36       0.2      4UN3
+ASG  LYS B  902  880    G      310Helix    -66.71    -23.03      58.3      4UN3
+ASG  ALA B  903  881    G      310Helix    -61.37    -25.55       7.9      4UN3
+ASG  GLU B  904  882    G      310Helix    -82.22      8.13      85.4      4UN3
+ASG  ARG B  905  883    G      310Helix   -122.80     29.28     116.5      4UN3
+ASG  GLY B  906  884    C          Coil     79.76      3.70      61.3      4UN3
+ASG  GLY B  907  885    C          Coil     65.98   -143.52       6.0      4UN3
+ASG  LEU B  908  886    C          Coil    -79.86    122.27       9.8      4UN3
+ASG  SER B  909  887    C          Coil    -80.69    156.35      52.9      4UN3
+ASG  GLU B  910  888    H    AlphaHelix    -59.10    -34.54      98.4      4UN3
+ASG  LEU B  911  889    H    AlphaHelix    -60.99    -39.66     107.8      4UN3
+ASG  ASP B  912  890    H    AlphaHelix    -64.48    -39.60      52.2      4UN3
+ASG  LYS B  913  891    H    AlphaHelix    -56.99    -53.40      18.8      4UN3
+ASG  ALA B  914  892    H    AlphaHelix    -56.24    -44.41       0.0      4UN3
+ASG  GLY B  915  893    H    AlphaHelix    -57.62    -45.15      12.7      4UN3
+ASG  PHE B  916  894    H    AlphaHelix    -61.53    -43.26      53.4      4UN3
+ASG  ILE B  917  895    H    AlphaHelix    -63.21    -47.36      13.2      4UN3
+ASG  LYS B  918  896    H    AlphaHelix    -69.49    -29.20      19.8      4UN3
+ASG  ARG B  919  897    H    AlphaHelix    -72.34    -19.19     120.8      4UN3
+ASG  GLN B  920  898    H    AlphaHelix    -68.50    -26.21      28.2      4UN3
+ASG  LEU B  921  899    H    AlphaHelix   -122.42    -10.28      13.2      4UN3
+ASG  VAL B  922  900    B        Bridge   -104.72    122.51      15.0      4UN3
+ASG  GLU B  923  901    C          Coil    -75.73    120.00      14.4      4UN3
+ASG  THR B  924  902    C          Coil   -109.48     -7.55      70.8      4UN3
+ASG  ARG B  925  903    C          Coil    -62.41    131.36      73.0      4UN3
+ASG  GLN B  926  904    H    AlphaHelix    -65.75    -40.98     120.7      4UN3
+ASG  ILE B  927  905    H    AlphaHelix    -63.31    -38.99      23.9      4UN3
+ASG  THR B  928  906    H    AlphaHelix    -69.19    -34.37       4.6      4UN3
+ASG  LYS B  929  907    H    AlphaHelix    -63.15    -38.69      86.6      4UN3
+ASG  HIS B  930  908    H    AlphaHelix    -60.81    -44.31      56.7      4UN3
+ASG  VAL B  931  909    H    AlphaHelix    -59.33    -49.31       1.0      4UN3
+ASG  ALA B  932  910    H    AlphaHelix    -59.42    -37.23       0.8      4UN3
+ASG  GLN B  933  911    H    AlphaHelix    -69.64    -40.31      53.2      4UN3
+ASG  ILE B  934  912    H    AlphaHelix    -61.97    -49.46       4.4      4UN3
+ASG  LEU B  935  913    H    AlphaHelix    -58.68    -47.13       2.0      4UN3
+ASG  ASP B  936  914    H    AlphaHelix    -64.46    -35.88       6.6      4UN3
+ASG  SER B  937  915    H    AlphaHelix    -76.16    -26.76      60.3      4UN3
+ASG  ARG B  938  916    H    AlphaHelix    -79.24    -31.92      97.4      4UN3
+ASG  MET B  939  917    H    AlphaHelix    -88.83    -38.50       9.4      4UN3
+ASG  ASN B  940  918    C          Coil   -106.72    104.71       4.3      4UN3
+ASG  THR B  941  919    C          Coil   -121.82      5.61      82.9      4UN3
+ASG  LYS B  942  920    E        Strand   -112.84    149.49     123.0      4UN3
+ASG  TYR B  943  921    E        Strand   -119.36    143.41     141.2      4UN3
+ASG  ASP B  944  922    E        Strand    -74.54   -172.03      54.5      4UN3
+ASG  GLU B  945  923    T          Turn    -66.88    -19.98     163.9      4UN3
+ASG  ASN B  946  924    T          Turn    -92.91     15.55      94.7      4UN3
+ASG  ASP B  947  925    T          Turn     59.11     33.05     129.5      4UN3
+ASG  LYS B  948  926    E        Strand   -117.10    146.68     122.4      4UN3
+ASG  LEU B  949  927    E        Strand    -60.72    133.73      58.1      4UN3
+ASG  ILE B  950  928    E        Strand    -92.31    106.18      71.5      4UN3
+ASG  ARG B  951  929    T          Turn    -84.98     80.57      76.2      4UN3
+ASG  GLU B  952  930    T          Turn    -65.88    -38.70      80.6      4UN3
+ASG  VAL B  953  931    T          Turn   -111.45    128.92       0.2      4UN3
+ASG  LYS B  954  932    E        Strand    -99.34    116.87      50.3      4UN3
+ASG  VAL B  955  933    E        Strand    -87.68    119.33       0.0      4UN3
+ASG  ILE B  956  934    E        Strand   -112.37    131.99       1.0      4UN3
+ASG  THR B  957  935    E        Strand   -114.56    124.92      19.1      4UN3
+ASG  LEU B  958  936    E        Strand   -116.13    149.81       0.5      4UN3
+ASG  LYS B  959  937    C          Coil    -82.43    161.95      44.1      4UN3
+ASG  SER B  960  938    H    AlphaHelix    -66.49    -22.53      35.2      4UN3
+ASG  LYS B  961  939    H    AlphaHelix    -64.27    -33.82      57.7      4UN3
+ASG  LEU B  962  940    H    AlphaHelix    -61.48    -51.42       2.7      4UN3
+ASG  VAL B  963  941    H    AlphaHelix    -74.10    -35.17       2.2      4UN3
+ASG  SER B  964  942    H    AlphaHelix    -59.55    -55.11      52.4      4UN3
+ASG  ASP B  965  943    H    AlphaHelix    -57.65    -39.27      44.1      4UN3
+ASG  PHE B  966  944    H    AlphaHelix    -62.00    -39.22       4.1      4UN3
+ASG  ARG B  967  945    H    AlphaHelix    -66.86    -48.87      10.6      4UN3
+ASG  LYS B  968  946    H    AlphaHelix    -59.57    -48.35     100.0      4UN3
+ASG  ASP B  969  947    H    AlphaHelix    -60.69    -50.66      80.9      4UN3
+ASG  PHE B  970  948    H    AlphaHelix   -101.48     16.50      46.8      4UN3
+ASG  GLN B  971  949    C          Coil     55.76     45.18      97.1      4UN3
+ASG  PHE B  972  950    C          Coil   -100.81     64.81      10.7      4UN3
+ASG  TYR B  973  951    C          Coil    -61.73    154.64      14.1      4UN3
+ASG  LYS B  974  952    C          Coil   -127.31    123.07      74.3      4UN3
+ASG  VAL B  975  953    T          Turn   -124.31    109.91      14.7      4UN3
+ASG  ARG B  976  954    T          Turn    -64.42    -32.05     154.6      4UN3
+ASG  GLU B  977  955    T          Turn    -77.38    -19.79      74.7      4UN3
+ASG  ILE B  978  956    T          Turn    -61.51    -48.41       4.1      4UN3
+ASG  ASN B  979  957    T          Turn   -166.87   -166.33      15.6      4UN3
+ASG  ASN B  980  958    H    AlphaHelix    -98.08     11.11      36.3      4UN3
+ASG  TYR B  981  959    H    AlphaHelix    -67.07    -29.82      22.8      4UN3
+ASG  HIS B  982  960    H    AlphaHelix    -59.91    -30.15      19.2      4UN3
+ASG  HIS B  983  961    H    AlphaHelix    -59.00    -40.44      37.1      4UN3
+ASG  ALA B  984  962    H    AlphaHelix    -77.40    -43.98       0.0      4UN3
+ASG  HIS B  985  963    H    AlphaHelix    -54.55    -44.40      18.8      4UN3
+ASG  ASP B  986  964    H    AlphaHelix    -58.13    -39.89       9.0      4UN3
+ASG  ALA B  987  965    H    AlphaHelix    -66.63    -44.08       0.0      4UN3
+ASG  TYR B  988  966    H    AlphaHelix    -55.44    -54.17       0.0      4UN3
+ASG  LEU B  989  967    H    AlphaHelix    -60.23    -34.43       0.0      4UN3
+ASG  ASN B  990  968    H    AlphaHelix    -59.46    -50.61       0.0      4UN3
+ASG  ALA B  991  969    H    AlphaHelix    -58.31    -51.75       0.0      4UN3
+ASG  VAL B  992  970    H    AlphaHelix    -55.73    -58.04       0.0      4UN3
+ASG  VAL B  993  971    H    AlphaHelix    -61.33    -40.73       0.0      4UN3
+ASG  GLY B  994  972    H    AlphaHelix    -62.01    -54.42       0.2      4UN3
+ASG  THR B  995  973    H    AlphaHelix    -57.98    -41.13       7.0      4UN3
+ASG  ALA B  996  974    H    AlphaHelix    -61.58    -44.44       0.0      4UN3
+ASG  LEU B  997  975    H    AlphaHelix    -60.50    -50.24       5.9      4UN3
+ASG  ILE B  998  976    H    AlphaHelix    -70.16    -32.33      14.2      4UN3
+ASG  LYS B  999  977    H    AlphaHelix    -62.92    -44.62      26.6      4UN3
+ASG  LYS B 1000  978    H    AlphaHelix    -72.21    -49.45      27.6      4UN3
+ASG  TYR B 1001  979    C          Coil   -120.26     82.53      53.4      4UN3
+ASG  PRO B 1002  980    G      310Helix    -66.47    -18.32      58.7      4UN3
+ASG  LYS B 1003  981    G      310Helix    -72.72    -24.53     192.9      4UN3
+ASG  LEU B 1004  982    G      310Helix    -75.68      6.80      16.8      4UN3
+ASG  GLU B 1005  983    H    AlphaHelix    -57.22    -33.58      80.5      4UN3
+ASG  SER B 1006  984    H    AlphaHelix    -62.19    -38.99      88.8      4UN3
+ASG  GLU B 1007  985    H    AlphaHelix    -81.24    -43.82      70.8      4UN3
+ASG  PHE B 1008  986    H    AlphaHelix    -96.79    -12.08       8.4      4UN3
+ASG  VAL B 1009  987    B        Bridge   -114.59    140.42      17.0      4UN3
+ASG  TYR B 1010  988    C          Coil    -74.09    140.64      83.8      4UN3
+ASG  GLY B 1011  989    C          Coil    118.43    173.15      36.1      4UN3
+ASG  ASP B 1012  990    C          Coil   -106.84    360.00     206.6      4UN3
+ASG  GLY B 1030  991    H    AlphaHelix    360.00    -66.25      87.9      4UN3
+ASG  LYS B 1031  992    H    AlphaHelix    -65.40    -30.98     185.1      4UN3
+ASG  ALA B 1032  993    H    AlphaHelix    -63.17    -48.34      20.1      4UN3
+ASG  THR B 1033  994    H    AlphaHelix    -58.45    -38.57      61.2      4UN3
+ASG  ALA B 1034  995    H    AlphaHelix    -62.19    -46.71      57.2      4UN3
+ASG  LYS B 1035  996    H    AlphaHelix    -60.89    -44.40      77.5      4UN3
+ASG  TYR B 1036  997    H    AlphaHelix    -52.45    -63.88      78.4      4UN3
+ASG  PHE B 1037  998    H    AlphaHelix    -53.94    -45.88     138.3      4UN3
+ASG  PHE B 1038  999    H    AlphaHelix    -55.32    -59.59      76.8      4UN3
+ASG  TYR B 1039 1000    H    AlphaHelix    -67.51    -26.10      13.5      4UN3
+ASG  SER B 1040 1001    H    AlphaHelix    -74.82    -18.07      59.3      4UN3
+ASG  ASN B 1041 1002    T          Turn   -125.67     18.80      42.5      4UN3
+ASG  ILE B 1042 1003    T          Turn    -61.02    -32.38       6.6      4UN3
+ASG  MET B 1043 1004    T          Turn    -94.97     21.60      31.3      4UN3
+ASG  ASN B 1044 1005    T          Turn    -78.32    -23.61      23.1      4UN3
+ASG  PHE B 1045 1006    T          Turn    -60.91    -19.09       0.0      4UN3
+ASG  PHE B 1046 1007    T          Turn    -72.91    -24.95       0.7      4UN3
+ASG  LYS B 1047 1008    T          Turn    -90.65    156.15      53.8      4UN3
+ASG  THR B 1048 1009    T          Turn    -93.24    -32.29      73.4      4UN3
+ASG  GLU B 1049 1010    T          Turn   -144.12    137.06     151.1      4UN3
+ASG  ILE B 1050 1011    T          Turn   -112.57    360.00     122.9      4UN3
+ASG  LYS B 1059 1012    T          Turn    360.00    149.50     227.7      4UN3
+ASG  ARG B 1060 1013    T          Turn   -136.24    146.89      81.5      4UN3
+ASG  PRO B 1061 1014    T          Turn    -61.01    162.50      83.7      4UN3
+ASG  LEU B 1062 1015    T          Turn    -70.36    -34.44     102.5      4UN3
+ASG  ILE B 1063 1016    E        Strand   -109.53    126.80      79.4      4UN3
+ASG  GLU B 1064 1017    E        Strand   -102.99    125.06       3.4      4UN3
+ASG  THR B 1065 1018    E        Strand   -133.33    159.67      53.8      4UN3
+ASG  ASN B 1066 1019    T          Turn    -94.58    120.00      15.2      4UN3
+ASG  GLY B 1067 1020    T          Turn    -46.09    -49.59      75.6      4UN3
+ASG  GLU B 1068 1021    T          Turn    -69.13    -35.85     186.0      4UN3
+ASG  THR B 1069 1022    T          Turn   -107.73    -25.91      92.3      4UN3
+ASG  GLY B 1070 1023    T          Turn     82.66      0.11      41.9      4UN3
+ASG  GLU B 1071 1024    C          Coil    -64.88    136.80      81.8      4UN3
+ASG  ILE B 1072 1025    E        Strand    -73.12    124.09      89.3      4UN3
+ASG  VAL B 1073 1026    E        Strand   -100.14    -33.44       0.8      4UN3
+ASG  TRP B 1074 1027    E        Strand   -151.98    149.81       0.0      4UN3
+ASG  ASP B 1075 1028    E        Strand   -133.24    102.86      21.6      4UN3
+ASG  LYS B 1076 1029    T          Turn    -60.12    -18.50      24.0      4UN3
+ASG  GLY B 1077 1030    T          Turn    -86.15    -12.82      55.0      4UN3
+ASG  ARG B 1078 1031    T          Turn   -146.44    -32.07     131.6      4UN3
+ASG  ASP B 1079 1032    H    AlphaHelix    -63.85    -40.96       0.4      4UN3
+ASG  PHE B 1080 1033    H    AlphaHelix    -59.24    -43.08      22.8      4UN3
+ASG  ALA B 1081 1034    H    AlphaHelix    -58.69    -41.80      33.1      4UN3
+ASG  THR B 1082 1035    H    AlphaHelix    -61.20    -44.92      10.2      4UN3
+ASG  VAL B 1083 1036    H    AlphaHelix    -56.59    -45.62       0.0      4UN3
+ASG  ARG B 1084 1037    H    AlphaHelix    -62.27    -36.72     132.9      4UN3
+ASG  LYS B 1085 1038    H    AlphaHelix    -65.75    -39.10     153.0      4UN3
+ASG  VAL B 1086 1039    H    AlphaHelix    -67.72    -46.32       6.2      4UN3
+ASG  LEU B 1087 1040    H    AlphaHelix    -65.49    -29.52      19.9      4UN3
+ASG  SER B 1088 1041    H    AlphaHelix    -88.20     -5.04      57.5      4UN3
+ASG  MET B 1089 1042    C          Coil    -59.73    118.33      33.5      4UN3
+ASG  PRO B 1090 1043    C          Coil    -63.20    -47.29      90.1      4UN3
+ASG  GLN B 1091 1044    C          Coil    -91.41    118.38      61.4      4UN3
+ASG  VAL B 1092 1045    T          Turn   -134.68    131.27      10.0      4UN3
+ASG  ASN B 1093 1046    E        Strand    -74.63     83.47       9.7      4UN3
+ASG  ILE B 1094 1047    E        Strand    -94.38    112.96      23.3      4UN3
+ASG  VAL B 1095 1048    E        Strand   -119.44    117.35       6.0      4UN3
+ASG  LYS B 1096 1049    E        Strand    -82.90    122.43      28.6      4UN3
+ASG  LYS B 1097 1050    C          Coil    -62.20    115.81      59.2      4UN3
+ASG  THR B 1098 1051    C          Coil    -69.90    127.16      70.5      4UN3
+ASG  GLU B 1099 1052    B        Bridge   -136.68    131.92      34.4      4UN3
+ASG  VAL B 1100 1053    C          Coil    -66.15    125.23      54.5      4UN3
+ASG  GLN B 1101 1054    C          Coil    -71.73    135.47      45.5      4UN3
+ASG  THR B 1102 1055    C          Coil   -129.22    166.83     110.9      4UN3
+ASG  GLY B 1103 1056    C          Coil    114.37   -143.35      52.9      4UN3
+ASG  GLY B 1104 1057    C          Coil    -61.44    142.71      57.0      4UN3
+ASG  PHE B 1105 1058    C          Coil    -58.37    -44.72     111.3      4UN3
+ASG  SER B 1106 1059    E        Strand   -160.33   -165.65      25.8      4UN3
+ASG  LYS B 1107 1060    E        Strand    -62.94    144.68     132.8      4UN3
+ASG  GLU B 1108 1061    C          Coil    -80.76    -19.37     145.4      4UN3
+ASG  SER B 1109 1062    C          Coil    -55.43    135.04      76.0      4UN3
+ASG  ILE B 1110 1063    C          Coil   -102.04    105.90      92.3      4UN3
+ASG  LEU B 1111 1064    B        Bridge    -86.50    156.32      50.2      4UN3
+ASG  PRO B 1112 1065    C          Coil    -65.50    168.34     105.0      4UN3
+ASG  LYS B 1113 1066    C          Coil    -59.87    144.00     148.5      4UN3
+ASG  ARG B 1114 1067    C          Coil   -160.49    144.48     100.2      4UN3
+ASG  ASN B 1115 1068    C          Coil    -84.86     91.01     141.5      4UN3
+ASG  SER B 1116 1069    T          Turn   -159.91    136.05      30.8      4UN3
+ASG  ASP B 1117 1070    T          Turn    -71.73     -5.92     145.5      4UN3
+ASG  LYS B 1118 1071    T          Turn    -77.58    -24.34     121.6      4UN3
+ASG  LEU B 1119 1072    T          Turn    -70.28    123.74      11.6      4UN3
+ASG  ILE B 1120 1073    B        Bridge   -106.15    132.25      45.4      4UN3
+ASG  ALA B 1121 1074    T          Turn    -62.35    136.50      39.5      4UN3
+ASG  ARG B 1122 1075    T          Turn    -82.87    -21.77      85.4      4UN3
+ASG  LYS B 1123 1076    B        Bridge   -143.54    158.56     135.0      4UN3
+ASG  LYS B 1124 1077    T          Turn    -49.72    -48.32     191.8      4UN3
+ASG  ASP B 1125 1078    T          Turn    -89.97      2.09     121.8      4UN3
+ASG  TRP B 1126 1079    B        Bridge    -95.68     85.70      55.1      4UN3
+ASG  ASP B 1127 1080    T          Turn    -57.31    117.31      58.0      4UN3
+ASG  PRO B 1128 1081    T          Turn    -60.98    -19.53      16.2      4UN3
+ASG  LYS B 1129 1082    T          Turn    -70.08    -26.56     115.7      4UN3
+ASG  LYS B 1130 1083    T          Turn    -97.53    -35.64      80.0      4UN3
+ASG  TYR B 1131 1084    T          Turn   -116.16    -18.11      28.8      4UN3
+ASG  GLY B 1132 1085    T          Turn     81.77   -163.36       1.4      4UN3
+ASG  GLY B 1133 1086    B        Bridge    151.44   -137.11       0.0      4UN3
+ASG  PHE B 1134 1087    B        Bridge    -92.81    169.55      54.3      4UN3
+ASG  ASP B 1135 1088    E        Strand   -156.95    154.23      30.6      4UN3
+ASG  SER B 1136 1089    E        Strand     56.60     70.99      48.1      4UN3
+ASG  PRO B 1137 1090    E        Strand    -77.29    155.78      53.5      4UN3
+ASG  THR B 1138 1091    C          Coil    -93.52    130.19      57.0      4UN3
+ASG  VAL B 1139 1092    E        Strand    -74.05    118.75      28.8      4UN3
+ASG  ALA B 1140 1093    E        Strand    -65.63    -48.77       0.9      4UN3
+ASG  TYR B 1141 1094    E        Strand   -167.64    147.67       8.5      4UN3
+ASG  SER B 1142 1095    E        Strand    -78.18    167.41       2.1      4UN3
+ASG  VAL B 1143 1096    E        Strand   -144.28    129.98       0.0      4UN3
+ASG  LEU B 1144 1097    E        Strand    -76.57    122.96       1.8      4UN3
+ASG  VAL B 1145 1098    E        Strand   -117.81    129.45       0.4      4UN3
+ASG  VAL B 1146 1099    E        Strand   -121.11    119.03      11.8      4UN3
+ASG  ALA B 1147 1100    E        Strand   -167.86   -161.09       6.2      4UN3
+ASG  LYS B 1148 1101    E        Strand   -131.27    144.49      72.8      4UN3
+ASG  VAL B 1149 1102    E        Strand   -129.93    147.78      21.2      4UN3
+ASG  GLU B 1150 1103    E        Strand    -64.87    147.58      71.7      4UN3
+ASG  LYS B 1151 1104    E        Strand   -143.30    131.13      95.9      4UN3
+ASG  GLY B 1152 1105    T          Turn     79.68    175.32      63.5      4UN3
+ASG  LYS B 1153 1106    T          Turn    -64.46    -23.83     211.9      4UN3
+ASG  SER B 1154 1107    T          Turn    -97.23      0.22      89.8      4UN3
+ASG  LYS B 1155 1108    T          Turn     57.01     47.38     123.9      4UN3
+ASG  LYS B 1156 1109    E        Strand    -55.42    142.87     153.4      4UN3
+ASG  LEU B 1157 1110    E        Strand    -88.72    100.33      76.5      4UN3
+ASG  LYS B 1158 1111    E        Strand    -85.91    158.55     119.7      4UN3
+ASG  SER B 1159 1112    E        Strand   -100.54    134.34      87.9      4UN3
+ASG  VAL B 1160 1113    E        Strand   -132.69    145.35      27.7      4UN3
+ASG  LYS B 1161 1114    E        Strand   -132.40    114.91      47.3      4UN3
+ASG  GLU B 1162 1115    E        Strand   -151.85    166.55      65.3      4UN3
+ASG  LEU B 1163 1116    E        Strand    -99.71    116.08      20.5      4UN3
+ASG  LEU B 1164 1117    E        Strand   -104.72    122.15      30.1      4UN3
+ASG  GLY B 1165 1118    E        Strand    -76.24    113.42      15.2      4UN3
+ASG  ILE B 1166 1119    E        Strand    -83.98    108.43       0.0      4UN3
+ASG  THR B 1167 1120    E        Strand    -68.33    158.79      19.2      4UN3
+ASG  ILE B 1168 1121    G      310Helix    -55.56    -39.94      22.5      4UN3
+ASG  MET B 1169 1122    G      310Helix    -67.61    -32.80     101.8      4UN3
+ASG  GLU B 1170 1123    G      310Helix    -82.35    -16.09      41.8      4UN3
+ASG  ARG B 1171 1124    H    AlphaHelix    -48.55    -66.10      83.6      4UN3
+ASG  SER B 1172 1125    H    AlphaHelix    -52.17    -41.92      89.8      4UN3
+ASG  SER B 1173 1126    H    AlphaHelix    -62.07    -40.51      71.1      4UN3
+ASG  PHE B 1174 1127    H    AlphaHelix    -67.77    -35.32       0.8      4UN3
+ASG  GLU B 1175 1128    H    AlphaHelix    -74.76    -35.52      84.9      4UN3
+ASG  LYS B 1176 1129    H    AlphaHelix    -59.97    -40.17     193.4      4UN3
+ASG  ASN B 1177 1130    C          Coil   -162.39     91.91      68.2      4UN3
+ASG  PRO B 1178 1131    H    AlphaHelix    -60.01    -37.97      38.7      4UN3
+ASG  ILE B 1179 1132    H    AlphaHelix    -61.48    -49.20      47.7      4UN3
+ASG  ASP B 1180 1133    H    AlphaHelix    -62.22    -40.42      87.8      4UN3
+ASG  PHE B 1181 1134    H    AlphaHelix    -60.67    -48.61      21.0      4UN3
+ASG  LEU B 1182 1135    H    AlphaHelix    -67.23    -34.54       0.0      4UN3
+ASG  GLU B 1183 1136    H    AlphaHelix    -68.17    -34.36     100.8      4UN3
+ASG  ALA B 1184 1137    H    AlphaHelix    -71.48    -25.77      90.7      4UN3
+ASG  LYS B 1185 1138    H    AlphaHelix    -76.81    -13.69      98.6      4UN3
+ASG  GLY B 1186 1139    C          Coil    113.31      6.50      37.0      4UN3
+ASG  TYR B 1187 1140    E        Strand    -89.42    144.52      14.4      4UN3
+ASG  LYS B 1188 1141    E        Strand   -132.46    154.30      81.0      4UN3
+ASG  GLU B 1189 1142    T          Turn     53.62     39.28     115.0      4UN3
+ASG  VAL B 1190 1143    T          Turn    -63.70    120.05      17.9      4UN3
+ASG  LYS B 1191 1144    C          Coil    -74.51     95.29     124.8      4UN3
+ASG  LYS B 1192 1145    G      310Helix    -59.12    -36.92     115.0      4UN3
+ASG  ASP B 1193 1146    G      310Helix    -73.61    -13.20     147.3      4UN3
+ASG  LEU B 1194 1147    G      310Helix    -97.29      9.11      51.8      4UN3
+ASG  ILE B 1195 1148    C          Coil    -77.87    117.25      31.7      4UN3
+ASG  ILE B 1196 1149    E        Strand   -112.46    121.13      32.6      4UN3
+ASG  LYS B 1197 1150    E        Strand    -71.62    123.14      95.9      4UN3
+ASG  LEU B 1198 1151    E        Strand   -123.95     87.88       2.5      4UN3
+ASG  PRO B 1199 1152    T          Turn    -65.81    168.90      26.1      4UN3
+ASG  LYS B 1200 1153    B        Bridge    -60.42    149.08      51.5      4UN3
+ASG  TYR B 1201 1154    T          Turn     72.69     16.25      14.6      4UN3
+ASG  SER B 1202 1155    E        Strand    -61.66    135.82       5.0      4UN3
+ASG  LEU B 1203 1156    E        Strand    -96.08    133.45      13.6      4UN3
+ASG  PHE B 1204 1157    E        Strand   -131.82    132.41       0.0      4UN3
+ASG  GLU B 1205 1158    E        Strand   -104.44    144.28      45.0      4UN3
+ASG  LEU B 1206 1159    T          Turn   -124.41   -132.38      41.6      4UN3
+ASG  GLU B 1207 1160    T          Turn    -66.73    -63.45     100.8      4UN3
+ASG  ASN B 1208 1161    T          Turn   -115.07     53.71     106.2      4UN3
+ASG  GLY B 1209 1162    T          Turn     76.48      0.12      25.0      4UN3
+ASG  ARG B 1210 1163    T          Turn    -67.94    132.42       2.8      4UN3
+ASG  LYS B 1211 1164    E        Strand   -126.47    153.54      52.9      4UN3
+ASG  ARG B 1212 1165    E        Strand   -136.17    141.97       4.6      4UN3
+ASG  MET B 1213 1166    E        Strand   -104.31    146.98       7.0      4UN3
+ASG  LEU B 1214 1167    E        Strand    -74.91    108.54       0.6      4UN3
+ASG  ALA B 1215 1168    C          Coil    -85.77    -29.41      13.3      4UN3
+ASG  SER B 1216 1169    T          Turn   -168.98   -163.37      46.7      4UN3
+ASG  ALA B 1217 1170    T          Turn    -83.61    -17.56      18.5      4UN3
+ASG  GLY B 1218 1171    T          Turn   -129.89     10.80      40.5      4UN3
+ASG  GLU B 1219 1172    T          Turn   -147.40    148.50      39.9      4UN3
+ASG  LEU B 1220 1173    E        Strand   -121.38    157.62       0.2      4UN3
+ASG  GLN B 1221 1174    E        Strand   -113.35    163.37      14.0      4UN3
+ASG  LYS B 1222 1175    E        Strand    -66.24    134.85       6.8      4UN3
+ASG  GLY B 1223 1176    C          Coil   -115.89     20.95       7.2      4UN3
+ASG  ASN B 1224 1177    C          Coil   -122.41    153.10      15.0      4UN3
+ASG  GLU B 1225 1178    C          Coil   -114.79    124.16      32.0      4UN3
+ASG  LEU B 1226 1179    C          Coil    -80.34    108.55       8.7      4UN3
+ASG  ALA B 1227 1180    C          Coil    -83.47     91.01      38.9      4UN3
+ASG  LEU B 1228 1181    C          Coil    -82.78    131.63      15.3      4UN3
+ASG  PRO B 1229 1182    C          Coil    -54.51    145.50      44.2      4UN3
+ASG  SER B 1230 1183    H    AlphaHelix    -61.36    -30.09      26.2      4UN3
+ASG  LYS B 1231 1184    H    AlphaHelix    -59.74    -40.26      96.4      4UN3
+ASG  TYR B 1232 1185    H    AlphaHelix    -75.77    -33.63      17.2      4UN3
+ASG  VAL B 1233 1186    H    AlphaHelix    -66.85    -51.33      22.8      4UN3
+ASG  ASN B 1234 1187    H    AlphaHelix    -61.08    -45.39      39.7      4UN3
+ASG  PHE B 1235 1188    H    AlphaHelix    -57.56    -43.16       2.0      4UN3
+ASG  LEU B 1236 1189    H    AlphaHelix    -64.35    -42.63       1.8      4UN3
+ASG  TYR B 1237 1190    H    AlphaHelix    -59.20    -49.02      46.9      4UN3
+ASG  LEU B 1238 1191    H    AlphaHelix    -68.45    -31.84      31.4      4UN3
+ASG  ALA B 1239 1192    H    AlphaHelix    -79.46    -32.66       6.5      4UN3
+ASG  SER B 1240 1193    H    AlphaHelix    -72.32    -30.96      12.0      4UN3
+ASG  HIS B 1241 1194    H    AlphaHelix   -107.19    360.00     162.9      4UN3
+ASG  GLU B 1253 1195    H    AlphaHelix    360.00    -39.85     178.1      4UN3
+ASG  GLN B 1254 1196    H    AlphaHelix    -58.66    -33.68     178.3      4UN3
+ASG  LYS B 1255 1197    H    AlphaHelix    -71.41    -30.85      86.3      4UN3
+ASG  GLN B 1256 1198    H    AlphaHelix    -65.70    -48.08      85.2      4UN3
+ASG  LEU B 1257 1199    H    AlphaHelix    -64.75    -29.28      87.1      4UN3
+ASG  PHE B 1258 1200    H    AlphaHelix    -63.26    -41.13      60.1      4UN3
+ASG  VAL B 1259 1201    H    AlphaHelix    -61.49    -53.14       8.2      4UN3
+ASG  GLU B 1260 1202    H    AlphaHelix    -63.50    -30.96     113.1      4UN3
+ASG  GLN B 1261 1203    H    AlphaHelix    -71.80    -29.96     137.8      4UN3
+ASG  HIS B 1262 1204    H    AlphaHelix   -114.54     42.33      38.5      4UN3
+ASG  LYS B 1263 1205    H    AlphaHelix    -68.15    -25.02      94.2      4UN3
+ASG  HIS B 1264 1206    H    AlphaHelix    -60.99    -19.92      93.0      4UN3
+ASG  TYR B 1265 1207    H    AlphaHelix    -57.15    -34.40      26.5      4UN3
+ASG  LEU B 1266 1208    H    AlphaHelix    -56.89    -54.11       1.2      4UN3
+ASG  ASP B 1267 1209    H    AlphaHelix    -59.89    -38.62      72.7      4UN3
+ASG  GLU B 1268 1210    H    AlphaHelix    -67.12    -36.28      55.2      4UN3
+ASG  ILE B 1269 1211    H    AlphaHelix    -68.59    -45.97       0.6      4UN3
+ASG  ILE B 1270 1212    H    AlphaHelix    -64.13    -34.77      12.1      4UN3
+ASG  GLU B 1271 1213    H    AlphaHelix    -59.92    -47.16     109.8      4UN3
+ASG  GLN B 1272 1214    H    AlphaHelix    -56.76    -51.44      44.0      4UN3
+ASG  ILE B 1273 1215    H    AlphaHelix    -54.22    -38.96       1.4      4UN3
+ASG  SER B 1274 1216    H    AlphaHelix    -71.65    -46.37      14.8      4UN3
+ASG  GLU B 1275 1217    H    AlphaHelix    -52.50    -52.12     117.1      4UN3
+ASG  PHE B 1276 1218    H    AlphaHelix    -56.90    -50.16      11.1      4UN3
+ASG  SER B 1277 1219    H    AlphaHelix    -64.06    -43.89       3.3      4UN3
+ASG  LYS B 1278 1220    H    AlphaHelix    -67.59    -31.43     139.5      4UN3
+ASG  ARG B 1279 1221    H    AlphaHelix    -82.12    -31.92      97.4      4UN3
+ASG  VAL B 1280 1222    H    AlphaHelix   -128.04    -44.86       0.2      4UN3
+ASG  ILE B 1281 1223    H    AlphaHelix    -76.57    -42.32       3.0      4UN3
+ASG  LEU B 1282 1224    C          Coil     58.78     52.89      66.6      4UN3
+ASG  ALA B 1283 1225    C          Coil   -130.49     70.69       6.7      4UN3
+ASG  ASP B 1284 1226    H    AlphaHelix    -54.76    -43.65     117.1      4UN3
+ASG  ALA B 1285 1227    H    AlphaHelix    -59.09    -53.13      56.7      4UN3
+ASG  ASN B 1286 1228    H    AlphaHelix    -58.13    -38.61      19.8      4UN3
+ASG  LEU B 1287 1229    H    AlphaHelix    -66.05    -40.30       7.0      4UN3
+ASG  ASP B 1288 1230    H    AlphaHelix    -63.48    -35.98     100.2      4UN3
+ASG  LYS B 1289 1231    H    AlphaHelix    -71.32    -34.04     120.7      4UN3
+ASG  VAL B 1290 1232    H    AlphaHelix    -62.91    -52.31       1.0      4UN3
+ASG  LEU B 1291 1233    H    AlphaHelix    -57.88    -49.43      47.1      4UN3
+ASG  SER B 1292 1234    H    AlphaHelix    -53.97    -57.91      55.6      4UN3
+ASG  ALA B 1293 1235    H    AlphaHelix    -54.18    -40.30       1.4      4UN3
+ASG  TYR B 1294 1236    H    AlphaHelix    -68.11    -37.83       7.8      4UN3
+ASG  ASN B 1295 1237    H    AlphaHelix    -59.22    -39.81      85.7      4UN3
+ASG  LYS B 1296 1238    H    AlphaHelix    -70.51    -24.22     153.5      4UN3
+ASG  HIS B 1297 1239    H    AlphaHelix   -109.76     19.30      20.8      4UN3
+ASG  ARG B 1298 1240    T          Turn    -66.89    -26.55     105.3      4UN3
+ASG  ASP B 1299 1241    T          Turn    -72.63    -26.82     158.9      4UN3
+ASG  LYS B 1300 1242    T          Turn    -63.59    156.37      65.5      4UN3
+ASG  PRO B 1301 1243    C          Coil    -52.89    146.36      68.9      4UN3
+ASG  ILE B 1302 1244    H    AlphaHelix    -61.44    -37.26      33.5      4UN3
+ASG  ARG B 1303 1245    H    AlphaHelix    -57.54    -57.92     132.1      4UN3
+ASG  GLU B 1304 1246    H    AlphaHelix    -53.52    -50.74      65.5      4UN3
+ASG  GLN B 1305 1247    H    AlphaHelix    -56.38    -39.48       0.4      4UN3
+ASG  ALA B 1306 1248    H    AlphaHelix    -67.11    -46.65       1.2      4UN3
+ASG  GLU B 1307 1249    H    AlphaHelix    -57.59    -41.04      72.1      4UN3
+ASG  ASN B 1308 1250    H    AlphaHelix    -75.94    -26.20      16.2      4UN3
+ASG  ILE B 1309 1251    H    AlphaHelix    -65.36    -39.11       1.0      4UN3
+ASG  ILE B 1310 1252    H    AlphaHelix    -57.35    -41.10      23.3      4UN3
+ASG  HIS B 1311 1253    H    AlphaHelix    -58.66    -35.58      94.1      4UN3
+ASG  LEU B 1312 1254    H    AlphaHelix    -59.64    -17.02       1.0      4UN3
+ASG  PHE B 1313 1255    G      310Helix    -76.80    -17.70       0.4      4UN3
+ASG  THR B 1314 1256    G      310Helix    -68.66    -16.34      32.8      4UN3
+ASG  LEU B 1315 1257    G      310Helix    -67.10    -33.74      14.8      4UN3
+ASG  THR B 1316 1258    C          Coil   -104.57     -6.16       1.6      4UN3
+ASG  ASN B 1317 1259    C          Coil    -62.05    155.92      43.9      4UN3
+ASG  LEU B 1318 1260    C          Coil    -70.90    149.42      31.5      4UN3
+ASG  GLY B 1319 1261    B        Bridge     92.28   -155.01       6.5      4UN3
+ASG  ALA B 1320 1262    C          Coil    -62.23    129.44      62.4      4UN3
+ASG  PRO B 1321 1263    C          Coil    -57.80    142.61      10.5      4UN3
+ASG  ALA B 1322 1264    C          Coil   -141.80    153.87      46.0      4UN3
+ASG  ALA B 1323 1265    C          Coil    -76.21    154.17      58.1      4UN3
+ASG  PHE B 1324 1266    E        Strand   -155.90    155.28      17.8      4UN3
+ASG  LYS B 1325 1267    E        Strand   -107.84    126.43     108.8      4UN3
+ASG  TYR B 1326 1268    T          Turn    -74.86    -51.35       0.0      4UN3
+ASG  PHE B 1327 1269    T          Turn   -139.10    -79.91      19.3      4UN3
+ASG  ASP B 1328 1270    T          Turn   -112.23     -1.51     135.8      4UN3
+ASG  THR B 1329 1271    T          Turn    -90.52    121.05      51.9      4UN3
+ASG  THR B 1330 1272    E        Strand    -96.73    131.27      81.1      4UN3
+ASG  ILE B 1331 1273    E        Strand   -110.76    106.80       2.1      4UN3
+ASG  ASP B 1332 1274    C          Coil    -62.38    144.54     123.9      4UN3
+ASG  ARG B 1333 1275    C          Coil    -67.54    137.68     122.8      4UN3
+ASG  LYS B 1334 1276    C          Coil    -91.94    108.66      97.6      4UN3
+ASG  ARG B 1335 1277    C          Coil    -88.85    158.26     107.5      4UN3
+ASG  TYR B 1336 1278    B        Bridge   -107.73     89.77      20.3      4UN3
+ASG  THR B 1337 1279    C          Coil    -85.40      9.51     112.1      4UN3
+ASG  SER B 1338 1280    C          Coil   -136.07    154.01      61.1      4UN3
+ASG  THR B 1339 1281    C          Coil   -121.25     16.03      13.9      4UN3
+ASG  LYS B 1340 1282    G      310Helix    -64.77    -44.78     162.5      4UN3
+ASG  GLU B 1341 1283    G      310Helix    -62.52    -31.99      71.6      4UN3
+ASG  VAL B 1342 1284    G      310Helix    -63.11    -31.80       1.2      4UN3
+ASG  LEU B 1343 1285    G      310Helix    -65.91    -15.15      14.8      4UN3
+ASG  ASP B 1344 1286    G      310Helix   -119.57      7.70     104.3      4UN3
+ASG  ALA B 1345 1287    C          Coil    -82.16   -166.19       2.7      4UN3
+ASG  THR B 1346 1288    E        Strand   -111.07    118.11      30.5      4UN3
+ASG  LEU B 1347 1289    E        Strand    -72.76    128.65       0.8      4UN3
+ASG  ILE B 1348 1290    E        Strand   -111.17    106.86       5.1      4UN3
+ASG  HIS B 1349 1291    E        Strand    -83.98    121.47      74.9      4UN3
+ASG  GLN B 1350 1292    E        Strand   -113.41    138.78      61.0      4UN3
+ASG  SER B 1351 1293    T          Turn    -68.73    177.26      33.3      4UN3
+ASG  ILE B 1352 1294    T          Turn    -65.13    -30.18      33.3      4UN3
+ASG  THR B 1353 1295    T          Turn    -93.48    -15.74       0.0      4UN3
+ASG  GLY B 1354 1296    T          Turn     74.85     11.73       0.7      4UN3
+ASG  LEU B 1355 1297    T          Turn    -79.67    -37.40       1.5      4UN3
+ASG  TYR B 1356 1298    T          Turn    -95.98    131.36      68.3      4UN3
+ASG  GLU B 1357 1299    E        Strand   -130.32    139.56      12.9      4UN3
+ASG  THR B 1358 1300    E        Strand   -118.09    115.53      45.3      4UN3
+ASG  ARG B 1359 1301    E        Strand   -100.65    130.86      21.2      4UN3
+ASG  ILE B 1360 1302    E        Strand   -118.00    114.74      37.1      4UN3
+ASG  ASP B 1361 1303    E        Strand    -72.71    102.35      64.8      4UN3
+ASG  LEU B 1362 1304    T          Turn    -71.47     60.25       1.8      4UN3
+ASG  SER B 1363 1305    T          Turn   -112.58     96.33      86.5      4UN3
+ASG  GLN B 1364 1306    C          Coil   -166.58    360.00      77.5      4UN3
+
